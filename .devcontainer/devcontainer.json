@@ -6,7 +6,7 @@
 	"service": "opentenbase-dev",
 	"workspaceFolder": "/data/project/OpenTenBase",
 
-	// 关键：告诉 Cursor 连接时也使用 root 用户
+	//关键：告诉 Cursor 连接时也使用 root 用户
 	"remoteUser": "root",
 
     "customizations": {
