@@ -1,0 +1,60 @@
+Script started on 2025-07-25 12:06:59+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="139" LINES="16"]
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# ls
+[?2004lCONTRIBUTING.md     LICENSE.txt            [0m[01;34mconfig[0m         docker-compose.yml    [01;32minit_dev_env.sh[0m          v2.4.0-release-note_en.txt
+CONTRIBUTING_ZH.md  Makefile               config.log     [01;32mentrypoint.sh[0m         [01;34minstall[0m                  v2.5.0-release-note.txt
+CONTRIBUTORS.md     Notice                 [01;32mconfig.status[0m  env_init.log          log.log                  v2.5.0-release-note_en.txt
+COPYRIGHT           README.md              [01;32mconfigure[0m      [01;34mexample[0m               pgxc_ctl.conf            v2.6.0-release-note.txt
+Code-of-Conduct.md  README_ZH.md           [01;32mconfigure.in[0m   history_events.md     slowquery                v2.6.0-release-note_en.txt
+GNUmakefile         aclocal.m4             [01;34mcontrib[0m        history_events_zh.md  [01;34msrc[0m
+GNUmakefile.in      [01;32mcat_file.sh[0m            [01;34mdoc[0m            [01;34mimages[0m                v2.2.0-release-note.txt
+HISTORY             compile_commands.json  [01;34mdocker[0m         index.html            v2.4.0-release-note.txt
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# ls[Kls[Kls[Kbash entrypoint.sh                    zsh   api t install fish
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 42%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+[1;31mE: [0mUnable to locate package fish[0m
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# ls
+[?2004lCONTRIBUTING.md     LICENSE.txt            [0m[01;34mconfig[0m         docker-compose.yml    [01;32minit_dev_env.sh[0m          v2.4.0-release-note_en.txt
+CONTRIBUTING_ZH.md  Makefile               config.log     [01;32mentrypoint.sh[0m         [01;34minstall[0m                  v2.5.0-release-note.txt
+CONTRIBUTORS.md     Notice                 [01;32mconfig.status[0m  env_init.log          log.log                  v2.5.0-release-note_en.txt
+COPYRIGHT           README.md              [01;32mconfigure[0m      [01;34mexample[0m               pgxc_ctl.conf            v2.6.0-release-note.txt
+Code-of-Conduct.md  README_ZH.md           [01;32mconfigure.in[0m   history_events.md     slowquery                v2.6.0-release-note_en.txt
+GNUmakefile         aclocal.m4             [01;34mcontrib[0m        history_events_zh.md  [01;34msrc[0m
+GNUmakefile.in      [01;32mcat_file.sh[0m            [01;34mdoc[0m            [01;34mimages[0m                v2.2.0-release-note.txt
+HISTORY             compile_commands.json  [01;34mdocker[0m         index.html            v2.4.0-release-note.txt
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# ls
+[?2004lCONTRIBUTING.md     LICENSE.txt            [0m[01;34mconfig[0m         docker-compose.yml    [01;32minit_dev_env.sh[0m          v2.4.0-release-note_en.txt
+CONTRIBUTING_ZH.md  Makefile               config.log     [01;32mentrypoint.sh[0m         [01;34minstall[0m                  v2.5.0-release-note.txt
+CONTRIBUTORS.md     Notice                 [01;32mconfig.status[0m  env_init.log          log.log                  v2.5.0-release-note_en.txt
+COPYRIGHT           README.md              [01;32mconfigure[0m      [01;34mexample[0m               pgxc_ctl.conf            v2.6.0-release-note.txt
+Code-of-Conduct.md  README_ZH.md           [01;32mconfigure.in[0m   history_events.md     slowquery                v2.6.0-release-note_en.txt
+GNUmakefile         aclocal.m4             [01;34mcontrib[0m        history_events_zh.md  [01;34msrc[0m
+GNUmakefile.in      [01;32mcat_file.sh[0m            [01;34mdoc[0m            [01;34mimages[0m                v2.2.0-release-note.txt
+HISTORY             compile_commands.json  [01;34mdocker[0m         index.html            v2.4.0-release-note.txt
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# bash entrypoint.sh                    apt install zsh
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 42%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+Package zsh is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+[1;31mE: [0mPackage 'zsh' has no installation candidate[0m
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# ao pi t i up pdata
+[?2004l[1;31mE: [0mInvalid operation updata[0m
+[?2004h]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# i apt 
+.cache/                     HISTORY                     configure.in                install/
+.devcontainer/              LICENSE.txt                 contrib/                    log.log
+.dir-locals.el              Makefile                    doc/                        pgxc_ctl.conf
+.git/                       Notice                      docker/                     slowquery
+.gitignore                  README.md                   docker-compose.yml          src/
+.vscode/                    README_ZH.md                entrypoint.sh               v2.2.0-release-note.txt
+CONTRIBUTING.md             aclocal.m4                  env_init.log                v2.4.0-release-note.txt
+CONTRIBUTING_ZH.md          cat_file.sh                 example/                    v2.4.0-release-note_en.txt
+CONTRIBUTORS.md             compile_commands.json       history_events.md           v2.5.0-release-note.txt
+COPYRIGHT                   config/                     history_events_zh.md        v2.5.0-release-note_en.txt
+Code-of-Conduct.md          config.log                  images/                     v2.6.0-release-note.txt
+GNUmakefile                 config.status               index.html                  v2.6.0-release-note_en.txt
+GNUmakefile.in              configure                   init_dev_env.sh             
+]0;root@8e8bb512979d: /data/project/OpenTenBaseroot@8e8bb512979d:/data/project/OpenTenBase# apt u     [?2004l
+exit
