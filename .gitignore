@@ -87,3 +87,5 @@ src/bin/pg_waldump/*desc.c
 # ==============================================================================
 # *.pc files are generated during the build for pkg-config
 *.pc
+
+.cache
