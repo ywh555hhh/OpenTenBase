@@ -57,6 +57,7 @@
 #include "parser/parse_target.h"
 #include "parser/parsetree.h"
 #include "parser/parser.h"
+
 #ifdef _MLS_
 #include "postmaster/postmaster.h"
 #endif
@@ -87,6 +88,7 @@
 #include "utils/memutils.h"
 #endif
 
+bool creating_force_view = false;
 
 #ifdef __OPENTENBASE__
 /* GUC to enable transform insert into multi-values to copy from */

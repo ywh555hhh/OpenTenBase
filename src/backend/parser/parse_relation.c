@@ -15,7 +15,6 @@
  *
  *-------------------------------------------------------------------------
  */
-#include "parser/parser.h"
 #include "postgres.h"
 
 #include <ctype.h>
