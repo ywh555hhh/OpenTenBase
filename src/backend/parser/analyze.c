@@ -168,10 +168,12 @@ parse_analyze(RawStmt *parseTree, const char *sourceText,
     PG_TRY();
     {
         query = transformTopLevelStmt(pstate, parseTree);
+        creating_force_view = save_creating_force_view;
     }
-    PG_FINALLY();
+    PG_CATCH();
     {
         creating_force_view = save_creating_force_view;
+        PG_RE_THROW();
     }
     PG_END_TRY();
 

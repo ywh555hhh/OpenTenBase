@@ -1,0 +1,1925 @@
+sha2_openssl.c: In function 'pg_sha256_init':
+sha2_openssl.c:32:5: warning: 'SHA256_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   32 |     SHA256_Init((SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:73:27: note: declared here
+   73 | OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_update':
+sha2_openssl.c:38:5: warning: 'SHA256_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   38 |     SHA256_Update((SHA256_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:74:27: note: declared here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_final':
+sha2_openssl.c:44:5: warning: 'SHA256_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   44 |     SHA256_Final(dest, (SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:76:27: note: declared here
+   76 | OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_init':
+sha2_openssl.c:51:5: warning: 'SHA512_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   51 |     SHA512_Init((SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:123:27: note: declared here
+  123 | OSSL_DEPRECATEDIN_3_0 int SHA512_Init(SHA512_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_update':
+sha2_openssl.c:57:5: warning: 'SHA512_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   57 |     SHA512_Update((SHA512_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:124:27: note: declared here
+  124 | OSSL_DEPRECATEDIN_3_0 int SHA512_Update(SHA512_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_final':
+sha2_openssl.c:63:5: warning: 'SHA512_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   63 |     SHA512_Final(dest, (SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:126:27: note: declared here
+  126 | OSSL_DEPRECATEDIN_3_0 int SHA512_Final(unsigned char *md, SHA512_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_init':
+sha2_openssl.c:70:5: warning: 'SHA384_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   70 |     SHA384_Init((SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:119:27: note: declared here
+  119 | OSSL_DEPRECATEDIN_3_0 int SHA384_Init(SHA512_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_update':
+sha2_openssl.c:76:5: warning: 'SHA384_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   76 |     SHA384_Update((SHA512_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:120:27: note: declared here
+  120 | OSSL_DEPRECATEDIN_3_0 int SHA384_Update(SHA512_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_final':
+sha2_openssl.c:82:5: warning: 'SHA384_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   82 |     SHA384_Final(dest, (SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:122:27: note: declared here
+  122 | OSSL_DEPRECATEDIN_3_0 int SHA384_Final(unsigned char *md, SHA512_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_init':
+sha2_openssl.c:89:5: warning: 'SHA224_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   89 |     SHA224_Init((SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:69:27: note: declared here
+   69 | OSSL_DEPRECATEDIN_3_0 int SHA224_Init(SHA256_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_update':
+sha2_openssl.c:95:5: warning: 'SHA224_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   95 |     SHA224_Update((SHA256_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:70:27: note: declared here
+   70 | OSSL_DEPRECATEDIN_3_0 int SHA224_Update(SHA256_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_final':
+sha2_openssl.c:101:5: warning: 'SHA224_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  101 |     SHA224_Final(dest, (SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:72:27: note: declared here
+   72 | OSSL_DEPRECATEDIN_3_0 int SHA224_Final(unsigned char *md, SHA256_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_init':
+sha2_openssl.c:32:5: warning: 'SHA256_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   32 |     SHA256_Init((SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:73:27: note: declared here
+   73 | OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_update':
+sha2_openssl.c:38:5: warning: 'SHA256_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   38 |     SHA256_Update((SHA256_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:74:27: note: declared here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_final':
+sha2_openssl.c:44:5: warning: 'SHA256_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   44 |     SHA256_Final(dest, (SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:76:27: note: declared here
+   76 | OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_init':
+sha2_openssl.c:51:5: warning: 'SHA512_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   51 |     SHA512_Init((SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:123:27: note: declared here
+  123 | OSSL_DEPRECATEDIN_3_0 int SHA512_Init(SHA512_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_update':
+sha2_openssl.c:57:5: warning: 'SHA512_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   57 |     SHA512_Update((SHA512_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:124:27: note: declared here
+  124 | OSSL_DEPRECATEDIN_3_0 int SHA512_Update(SHA512_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_final':
+sha2_openssl.c:63:5: warning: 'SHA512_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   63 |     SHA512_Final(dest, (SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:126:27: note: declared here
+  126 | OSSL_DEPRECATEDIN_3_0 int SHA512_Final(unsigned char *md, SHA512_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_init':
+sha2_openssl.c:70:5: warning: 'SHA384_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   70 |     SHA384_Init((SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:119:27: note: declared here
+  119 | OSSL_DEPRECATEDIN_3_0 int SHA384_Init(SHA512_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_update':
+sha2_openssl.c:76:5: warning: 'SHA384_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   76 |     SHA384_Update((SHA512_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:120:27: note: declared here
+  120 | OSSL_DEPRECATEDIN_3_0 int SHA384_Update(SHA512_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_final':
+sha2_openssl.c:82:5: warning: 'SHA384_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   82 |     SHA384_Final(dest, (SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:122:27: note: declared here
+  122 | OSSL_DEPRECATEDIN_3_0 int SHA384_Final(unsigned char *md, SHA512_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_init':
+sha2_openssl.c:89:5: warning: 'SHA224_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   89 |     SHA224_Init((SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:69:27: note: declared here
+   69 | OSSL_DEPRECATEDIN_3_0 int SHA224_Init(SHA256_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_update':
+sha2_openssl.c:95:5: warning: 'SHA224_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   95 |     SHA224_Update((SHA256_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:70:27: note: declared here
+   70 | OSSL_DEPRECATEDIN_3_0 int SHA224_Update(SHA256_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_final':
+sha2_openssl.c:101:5: warning: 'SHA224_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  101 |     SHA224_Final(dest, (SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:72:27: note: declared here
+   72 | OSSL_DEPRECATEDIN_3_0 int SHA224_Final(unsigned char *md, SHA256_CTX *c);
+      |                           ^~~~~~~~~~~~
+pgtz.c: In function 'pg_tzset_offset':
+pgtz.c:353:49: warning: '%s' directive output may be truncated writing up to 63 bytes into a region of size between 61 and 124 [-Wformat-truncation=]
+  353 |         snprintf(tzname, sizeof(tzname), "<+%s>-%s",
+      |                                                 ^~
+  354 |                  offsetstr, offsetstr);
+      |                             ~~~~~~~~~            
+pgtz.c:353:9: note: 'snprintf' output between 5 and 131 bytes into a destination of size 128
+  353 |         snprintf(tzname, sizeof(tzname), "<+%s>-%s",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  354 |                  offsetstr, offsetstr);
+      |                  ~~~~~~~~~~~~~~~~~~~~~
+pgtz.c:350:49: warning: '%s' directive output may be truncated writing up to 63 bytes into a region of size between 61 and 124 [-Wformat-truncation=]
+  350 |         snprintf(tzname, sizeof(tzname), "<-%s>+%s",
+      |                                                 ^~
+  351 |                  offsetstr, offsetstr);
+      |                             ~~~~~~~~~            
+pgtz.c:350:9: note: 'snprintf' output between 5 and 131 bytes into a destination of size 128
+  350 |         snprintf(tzname, sizeof(tzname), "<-%s>+%s",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  351 |                  offsetstr, offsetstr);
+      |                  ~~~~~~~~~~~~~~~~~~~~~
+zic.c: In function 'writezone':
+zic.c:2175:9: warning: 'strncpy' output truncated before terminating nul copying 4 bytes from a string of the same length [-Wstringop-truncation]
+ 2175 |         strncpy(tzh.tzh_magic, TZ_MAGIC, sizeof tzh.tzh_magic);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+elog.c: In function 'send_message_to_server_log':
+elog.c:941:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  941 |     if (errlog_collection_func && (buf.len > 0) && ('\0' != buf.data[0]))
+      |     ^~
+elog.c:944:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  944 |         pfree(buf.data);
+      |         ^~~~~
+register_common.c: In function 'pgxcnode_gethash':
+register_common.c:187:38: warning: comparison between pointer and zero character constant [-Wpointer-compare]
+  187 |     if (nodename == NULL || nodename == '\0')
+      |                                      ^~
+register_common.c:187:29: note: did you mean to dereference the pointer?
+  187 |     if (nodename == NULL || nodename == '\0')
+      |                             ^
+In file included from replication.c:27:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+register_common.c: In function 'Recovery_SaveRegisterInfo':
+register_common.c:494:25: warning: '.bkp' directive writing 4 bytes into a region of size between 1 and 1024 [-Wformat-overflow=]
+  494 |     sprintf(filebkp, "%s.bkp", GTMPGXCNodeFile);
+      |                         ^~~~
+register_common.c:494:5: note: 'sprintf' output between 5 and 1028 bytes into a destination of size 1024
+  494 |     sprintf(filebkp, "%s.bkp", GTMPGXCNodeFile);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gtm_xlog.c: In function 'getSystemTime':
+gtm_xlog.c:165:5: warning: 'ftime' is deprecated: Use gettimeofday or clock_gettime instead [-Wdeprecated-declarations]
+  165 |     ftime(&t);
+      |     ^~~~~
+In file included from gtm_xlog.c:18:
+/usr/include/x86_64-linux-gnu/sys/timeb.h:29:12: note: declared here
+   29 | extern int ftime (struct timeb *__timebuf)
+      |            ^~~~~
+gtm_thread.c: In function 'GTM_ThreadCleanup':
+gtm_thread.c:407:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  407 |     if(thrinfo->locks_hold != NULL)
+      |     ^~
+gtm_thread.c:409:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  409 |         if(thrinfo->write_locks_hold != NULL)
+      |         ^~
+In file included from gtm_txn.c:31:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+gtm_store.c: In function 'GTM_StoreDropAllSeqInDatabase':
+gtm_store.c:3351:50: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+ 3351 |                 int                   newcount = NULL;
+      |                                                  ^~~~
+gtm_store.c: In function 'ProcessListStorageSequenceCommand':
+gtm_store.c:3448:50: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+ 3448 |                 int                   newcount = NULL;
+      |                                                  ^~~~
+gtm_store.c: In function 'ProcessListStorageTransactionCommand':
+gtm_store.c:3560:44: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+ 3560 |                 int             newcount = NULL;
+      |                                            ^~~~
+main.c: In function 'CheckTscFeatures':
+main.c:583:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  583 |     if (file == NULL)
+      |     ^~
+main.c:586:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  586 |         if (fscanf(file, "%d", &count) == EOF)
+      |         ^~
+In file included from gtm_xlog.c:29:
+gtm_xlog.c: At top level:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+gtm_store.c: In function 'GTM_StoreGetAllSeqInDatabase':
+gtm_store.c:4277:49: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+ 4277 |                 int                  newcount = NULL;
+      |                                                 ^~~~
+In file included from gtm_store.c:25:
+gtm_store.c: At top level:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+In file included from gtm_standby.c:25:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+In file included from gtm_seq.c:29:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+main.c: In function 'getSystemTime':
+main.c:3161:5: warning: 'ftime' is deprecated: Use gettimeofday or clock_gettime instead [-Wdeprecated-declarations]
+ 3161 |     ftime(&t);
+      |     ^~~~~
+In file included from main.c:23:
+/usr/include/x86_64-linux-gnu/sys/timeb.h:29:12: note: declared here
+   29 | extern int ftime (struct timeb *__timebuf)
+      |            ^~~~~
+In file included from main.c:42:
+main.c: At top level:
+../../../src/include/gtm/standby_utils.h:23:20: warning: inline function 'Recovery_IsStandby' declared but never defined
+   23 | extern inline bool Recovery_IsStandby(void);
+      |                    ^~~~~~~~~~~~~~~~~~
+gtm_ctl.c: In function 'main':
+gtm_ctl.c:1666:17: warning: 'sprintf' argument 3 overlaps destination object 'gtmdata_opt' [-Wrestrict]
+ 1666 |                 sprintf(gtmdata_opt, "%s ", gtmdata_opt);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gtm_ctl.c:75:14: note: destination object referenced by 'restrict'-qualified argument 1 was declared here
+   75 | static char *gtmdata_opt = NULL;
+      |              ^~~~~~~~~~~
+gtm_ctl.c:1664:17: warning: 'sprintf' argument 3 overlaps destination object 'gtmdata_opt' [-Wrestrict]
+ 1664 |                 sprintf(gtmdata_opt, "%s -i %s ", gtmdata_opt, nodename);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gtm_ctl.c:75:14: note: destination object referenced by 'restrict'-qualified argument 1 was declared here
+   75 | static char *gtmdata_opt = NULL;
+      |              ^~~~~~~~~~~
+gtm_ctl.c: In function 'do_status':
+gtm_ctl.c:995:15: warning: 'check_gtm_status' accessing 800 bytes in a region of size 8 [-Wstringop-overflow=]
+  995 |         ret = check_gtm_status(gtm_conn, &status, &master_gts,&master_flushptr,&slave_count,&slave_is_sync, &slave_timestamp_array,
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  996 |                                &slave_flushptr_array,&slave_application_name,wait_seconds);
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gtm_ctl.c:995:15: note: referencing argument 9 of type 'char ***'
+In file included from gtm_ctl.c:36:
+../../../src/include/gtm/gtm_client.h:305:5: note: in a call to function 'check_gtm_status'
+  305 | int check_gtm_status(GTM_Conn *conn, int *status, GTM_Timestamp *master,XLogRecPtr *master_ptr,
+      |     ^~~~~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_init':
+sha2_openssl.c:32:5: warning: 'SHA256_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   32 |     SHA256_Init((SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:73:27: note: declared here
+   73 | OSSL_DEPRECATEDIN_3_0 int SHA256_Init(SHA256_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_update':
+sha2_openssl.c:38:5: warning: 'SHA256_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   38 |     SHA256_Update((SHA256_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:74:27: note: declared here
+   74 | OSSL_DEPRECATEDIN_3_0 int SHA256_Update(SHA256_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha256_final':
+sha2_openssl.c:44:5: warning: 'SHA256_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   44 |     SHA256_Final(dest, (SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:76:27: note: declared here
+   76 | OSSL_DEPRECATEDIN_3_0 int SHA256_Final(unsigned char *md, SHA256_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_init':
+sha2_openssl.c:51:5: warning: 'SHA512_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   51 |     SHA512_Init((SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:123:27: note: declared here
+  123 | OSSL_DEPRECATEDIN_3_0 int SHA512_Init(SHA512_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_update':
+sha2_openssl.c:57:5: warning: 'SHA512_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   57 |     SHA512_Update((SHA512_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:124:27: note: declared here
+  124 | OSSL_DEPRECATEDIN_3_0 int SHA512_Update(SHA512_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha512_final':
+sha2_openssl.c:63:5: warning: 'SHA512_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   63 |     SHA512_Final(dest, (SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:126:27: note: declared here
+  126 | OSSL_DEPRECATEDIN_3_0 int SHA512_Final(unsigned char *md, SHA512_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_init':
+sha2_openssl.c:70:5: warning: 'SHA384_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   70 |     SHA384_Init((SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:119:27: note: declared here
+  119 | OSSL_DEPRECATEDIN_3_0 int SHA384_Init(SHA512_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_update':
+sha2_openssl.c:76:5: warning: 'SHA384_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   76 |     SHA384_Update((SHA512_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:120:27: note: declared here
+  120 | OSSL_DEPRECATEDIN_3_0 int SHA384_Update(SHA512_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha384_final':
+sha2_openssl.c:82:5: warning: 'SHA384_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   82 |     SHA384_Final(dest, (SHA512_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:122:27: note: declared here
+  122 | OSSL_DEPRECATEDIN_3_0 int SHA384_Final(unsigned char *md, SHA512_CTX *c);
+      |                           ^~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_init':
+sha2_openssl.c:89:5: warning: 'SHA224_Init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   89 |     SHA224_Init((SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:69:27: note: declared here
+   69 | OSSL_DEPRECATEDIN_3_0 int SHA224_Init(SHA256_CTX *c);
+      |                           ^~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_update':
+sha2_openssl.c:95:5: warning: 'SHA224_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   95 |     SHA224_Update((SHA256_CTX *) ctx, data, len);
+      |     ^~~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:70:27: note: declared here
+   70 | OSSL_DEPRECATEDIN_3_0 int SHA224_Update(SHA256_CTX *c,
+      |                           ^~~~~~~~~~~~~
+sha2_openssl.c: In function 'pg_sha224_final':
+sha2_openssl.c:101:5: warning: 'SHA224_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  101 |     SHA224_Final(dest, (SHA256_CTX *) ctx);
+      |     ^~~~~~~~~~~~
+In file included from sha2_openssl.c:23:
+/usr/include/openssl/sha.h:72:27: note: declared here
+   72 | OSSL_DEPRECATEDIN_3_0 int SHA224_Final(unsigned char *md, SHA256_CTX *c);
+      |                           ^~~~~~~~~~~~
+fe-connect.c: In function 'setKeepalivesIdle':
+fe-connect.c:1583:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1583 |     if (conn->keepalives_idle == NULL)
+      |     ^~
+fe-connect.c:1586:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1586 |         if (!parse_int_param(conn->keepalives_idle, &idle, conn,
+      |         ^~
+fe-connect.c: In function 'setKeepalivesInterval':
+fe-connect.c:1617:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1617 |     if (conn->keepalives_interval == NULL)
+      |     ^~
+fe-connect.c:1620:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1620 |         if (!parse_int_param(conn->keepalives_interval, &interval, conn,
+      |         ^~
+fe-connect.c: In function 'setKeepalivesCount':
+fe-connect.c:1652:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1652 |     if (conn->keepalives_count == NULL)
+      |     ^~
+fe-connect.c:1655:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1655 |         if (!parse_int_param(conn->keepalives_count, &count, conn,
+      |         ^~
+fe-secure-openssl.c: In function 'initialize_SSL':
+fe-secure-openssl.c:1148:13: warning: 'ENGINE_by_id' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1148 |             conn->engine = ENGINE_by_id(engine_str);
+      |             ^~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:336:31: note: declared here
+  336 | OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
+      |                               ^~~~~~~~~~~~
+fe-secure-openssl.c:1161:13: warning: 'ENGINE_init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1161 |             if (ENGINE_init(conn->engine) == 0)
+      |             ^~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:620:27: note: declared here
+  620 | OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
+      |                           ^~~~~~~~~~~
+fe-secure-openssl.c:1169:17: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1169 |                 ENGINE_free(conn->engine);
+      |                 ^~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:493:27: note: declared here
+  493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+      |                           ^~~~~~~~~~~
+fe-secure-openssl.c:1175:13: warning: 'ENGINE_load_private_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1175 |             pkey = ENGINE_load_private_key(conn->engine, engine_colon,
+      |             ^~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:638:11: note: declared here
+  638 | EVP_PKEY *ENGINE_load_private_key(ENGINE *e, const char *key_id,
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+fe-secure-openssl.c:1185:17: warning: 'ENGINE_finish' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1185 |                 ENGINE_finish(conn->engine);
+      |                 ^~~~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:628:27: note: declared here
+  628 | OSSL_DEPRECATEDIN_3_0 int ENGINE_finish(ENGINE *e);
+      |                           ^~~~~~~~~~~~~
+fe-secure-openssl.c:1186:17: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1186 |                 ENGINE_free(conn->engine);
+      |                 ^~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:493:27: note: declared here
+  493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+      |                           ^~~~~~~~~~~
+fe-secure-openssl.c:1199:17: warning: 'ENGINE_finish' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1199 |                 ENGINE_finish(conn->engine);
+      |                 ^~~~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:628:27: note: declared here
+  628 | OSSL_DEPRECATEDIN_3_0 int ENGINE_finish(ENGINE *e);
+      |                           ^~~~~~~~~~~~~
+fe-secure-openssl.c:1200:17: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1200 |                 ENGINE_free(conn->engine);
+      |                 ^~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:493:27: note: declared here
+  493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+      |                           ^~~~~~~~~~~
+fe-secure-openssl.c: In function 'pgtls_close':
+fe-secure-openssl.c:1415:9: warning: 'ENGINE_finish' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1415 |         ENGINE_finish(conn->engine);
+      |         ^~~~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:628:27: note: declared here
+  628 | OSSL_DEPRECATEDIN_3_0 int ENGINE_finish(ENGINE *e);
+      |                           ^~~~~~~~~~~~~
+fe-secure-openssl.c:1416:9: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1416 |         ENGINE_free(conn->engine);
+      |         ^~~~~~~~~~~
+In file included from fe-secure-openssl.c:59:
+/usr/include/openssl/engine.h:493:27: note: declared here
+  493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+      |                           ^~~~~~~~~~~
+fe-connect.c: In function 'freePGconn':
+fe-connect.c:3556:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 3556 |     if (conn->connect_timeout)
+      |     ^~
+fe-connect.c:3558:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 3558 |         if (conn->pgtcp_user_timeout)
+      |         ^~
+fe-secure-openssl.c: In function 'initialize_SSL':
+fe-secure-openssl.c:951:44: warning: '%s' directive output may be truncated writing 20 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+  951 |         snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, ROOT_CERT_FILE);
+      |                                            ^~
+fe-secure-openssl.c:951:9: note: 'snprintf' output between 22 and 1045 bytes into a destination of size 1024
+  951 |         snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, ROOT_CERT_FILE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fe-secure-openssl.c:977:52: warning: '%s' directive output may be truncated writing 20 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+  977 |                 snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, ROOT_CRL_FILE);
+      |                                                    ^~
+fe-secure-openssl.c:977:17: note: 'snprintf' output between 22 and 1045 bytes into a destination of size 1024
+  977 |                 snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, ROOT_CRL_FILE);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fe-secure-openssl.c:1037:44: warning: '%s' directive output may be truncated writing 26 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 1037 |         snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, USER_CERT_FILE);
+      |                                            ^~
+fe-secure-openssl.c:1037:9: note: 'snprintf' output between 28 and 1051 bytes into a destination of size 1024
+ 1037 |         snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, USER_CERT_FILE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fe-secure-openssl.c:1221:44: warning: '%s' directive output may be truncated writing 26 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 1221 |         snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, USER_KEY_FILE);
+      |                                            ^~
+fe-secure-openssl.c:1221:9: note: 'snprintf' output between 28 and 1051 bytes into a destination of size 1024
+ 1221 |         snprintf(fnbuf, sizeof(fnbuf), "%s/%s", homedir, USER_KEY_FILE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fe-connect.c: In function 'connectOptions2':
+fe-connect.c:1105:55: warning: '%s' directive output may be truncated writing 7 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 1105 |             snprintf(conn->pgpassfile, MAXPGPATH, "%s/%s", homedir, PGPASSFILE);
+      |                                                       ^~
+fe-connect.c:1105:13: note: 'snprintf' output between 9 and 1032 bytes into a destination of size 1024
+ 1105 |             snprintf(conn->pgpassfile, MAXPGPATH, "%s/%s", homedir, PGPASSFILE);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fe-connect.c: In function 'parseServiceInfo':
+fe-connect.c:4859:46: warning: '%s' directive output may be truncated writing 16 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 4859 |         snprintf(serviceFile, MAXPGPATH, "%s/%s", homedir, ".pg_service.conf");
+      |                                              ^~            ~~~~~~~~~~~~~~~~~~
+fe-connect.c:4859:9: note: 'snprintf' output between 18 and 1041 bytes into a destination of size 1024
+ 4859 |         snprintf(serviceFile, MAXPGPATH, "%s/%s", homedir, ".pg_service.conf");
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ecpg.c: In function 'main':
+ecpg.c:212:59: warning: '/informix/esql' directive output may be truncated writing 14 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  212 |                     snprintf(informix_path, MAXPGPATH, "%s/informix/esql", pkginclude_path);
+      |                                                           ^~~~~~~~~~~~~~
+ecpg.c:212:21: note: 'snprintf' output between 15 and 1038 bytes into a destination of size 1024
+  212 |                     snprintf(informix_path, MAXPGPATH, "%s/informix/esql", pkginclude_path);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+misc.c: In function 'ECPGset_var':
+misc.c:552:9: warning: 'strncpy' output truncated before terminating nul copying 5 bytes from a string of the same length [-Wstringop-truncation]
+  552 |         strncpy(sqlca->sqlstate, "YE001", sizeof(sqlca->sqlstate));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+informix.c:536:23: warning: argument 2 of type 'short int[3]' with mismatched bound [-Warray-parameter=]
+  536 | rjulmdy(date d, short mdy[3])
+      |                 ~~~~~~^~~~~~
+In file included from informix.c:11:
+../include/ecpg_informix.h:38:29: note: previously declared as 'short int *'
+   38 | extern int    rjulmdy(date, short *);
+      |                             ^~~~~~~
+informix.c:587:15: warning: argument 1 of type 'short int[3]' with mismatched bound [-Warray-parameter=]
+  587 | rmdyjul(short mdy[3], date * d)
+      |         ~~~~~~^~~~~~
+In file included from informix.c:11:
+../include/ecpg_informix.h:41:23: note: previously declared as 'short int *'
+   41 | extern int    rmdyjul(short *, date *);
+      |                       ^~~~~~~
+In file included from nbtsort.c:78:
+nbtsort.c: In function '_bt_blwritepage':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+nbtsort.c:284:5: note: in expansion of macro 'RelationOpenSmgr'
+  284 |     RelationOpenSmgr(wstate->index);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+nbtsort.c:284:5: note: in expansion of macro 'RelationOpenSmgr'
+  284 |     RelationOpenSmgr(wstate->index);
+      |     ^~~~~~~~~~~~~~~~
+nbtsort.c: In function '_bt_load':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+nbtsort.c:843:9: note: in expansion of macro 'RelationOpenSmgr'
+  843 |         RelationOpenSmgr(wstate->index);
+      |         ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+nbtsort.c:843:9: note: in expansion of macro 'RelationOpenSmgr'
+  843 |         RelationOpenSmgr(wstate->index);
+      |         ^~~~~~~~~~~~~~~~
+In file included from ../../../../src/include/storage/lmgr.h:23,
+                 from brin_pageops.c:21:
+brin_pageops.c: In function 'brin_getinsertbuffer':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+../../../../src/include/utils/rel.h:530:17: note: in expansion of macro 'RelationOpenSmgr'
+  530 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+brin_pageops.c:784:13: note: in expansion of macro 'RelationSetTargetBlock'
+  784 |             RelationSetTargetBlock(irel, BufferGetBlockNumber(buf));
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+../../../../src/include/utils/rel.h:530:17: note: in expansion of macro 'RelationOpenSmgr'
+  530 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+brin_pageops.c:784:13: note: in expansion of macro 'RelationSetTargetBlock'
+  784 |             RelationSetTargetBlock(irel, BufferGetBlockNumber(buf));
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+slru.c: In function 'SimpleLruShmemSize':
+slru.c:163:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  163 |     if (nlsns > 0)
+      |     ^~
+slru.c:166:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  166 |         if (enable_clog_mprotect)
+      |         ^~
+partition.c: In function 'partition_bounds_equal':
+partition.c:678:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  678 |     if (b1->null_index != b2->null_index)
+      |     ^~
+partition.c:681:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  681 |         if (b1->default_index != b2->default_index)
+      |         ^~
+lru.c: In function 'LruShmemSize':
+lru.c:231:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  231 |     if (nlsns > 0)
+      |     ^~
+lru.c:234:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  234 |         if (enable_tlog_mprotect)
+      |         ^~
+In file included from shardmap.c:19:
+shardmap.c: In function 'TruncateShard':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+shardmap.c:2236:9: note: in expansion of macro 'RelationOpenSmgr'
+ 2236 |         RelationOpenSmgr(rel);
+      |         ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+shardmap.c:2236:9: note: in expansion of macro 'RelationOpenSmgr'
+ 2236 |         RelationOpenSmgr(rel);
+      |         ^~~~~~~~~~~~~~~~
+partition.c: In function 'get_qual_for_list':
+partition.c:1796:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 1796 |     else
+      |     ^~~~
+partition.c:1804:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 1804 |         if (spec->is_default)
+      |         ^~
+foreigncmds.c: In function 'lookup_fdw_handler_func':
+foreigncmds.c:481:18: warning: 'funcargtypes' may be used uninitialized [-Wmaybe-uninitialized]
+  481 |     handlerOid = LookupFuncName((List *) handler->arg, 0, funcargtypes, false);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from foreigncmds.c:33:
+../../../src/include/parser/parse_func.h:66:12: note: by argument 3 of type 'const Oid *' {aka 'const unsigned int *'} to 'LookupFuncName' declared here
+   66 | extern Oid LookupFuncName(List *funcname, int nargs, const Oid *argtypes,
+      |            ^~~~~~~~~~~~~~
+foreigncmds.c:475:20: note: 'funcargtypes' declared here
+  475 |     Oid            funcargtypes[1];    /* dummy */
+      |                    ^~~~~~~~~~~~
+dynahash.c: In function 'hash_search_with_hash_value':
+dynahash.c:967:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  967 |     if (segp == NULL)
+      |     ^~
+dynahash.c:970:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  970 |         prevBucketPtr = &segp[segment_ndx];
+      |         ^~~~~~~~~~~~~
+hashpage.c: In function '_hash_init':
+hashpage.c:372:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  372 |     if (ffactor < 10)
+      |     ^~
+hashpage.c:375:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  375 |         procid = index_getprocid(rel, 1, HASHSTANDARD_PROC);
+      |         ^~~~~~
+In file included from ../../../../src/include/storage/lmgr.h:23,
+                 from freespace.c:35:
+freespace.c: In function 'FreeSpaceMapTruncateRel':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+freespace.c:408:5: note: in expansion of macro 'RelationOpenSmgr'
+  408 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+freespace.c:408:5: note: in expansion of macro 'RelationOpenSmgr'
+  408 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+freespace.c: In function 'fsm_readbuf':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+freespace.c:665:5: note: in expansion of macro 'RelationOpenSmgr'
+  665 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+freespace.c:665:5: note: in expansion of macro 'RelationOpenSmgr'
+  665 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+freespace.c: In function 'fsm_extend':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+freespace.c:732:5: note: in expansion of macro 'RelationOpenSmgr'
+  732 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+freespace.c:732:5: note: in expansion of macro 'RelationOpenSmgr'
+  732 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+In file included from ../../../../src/include/storage/lmgr.h:23,
+                 from hashpage.c:33:
+hashpage.c: In function '_hash_alloc_buckets':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+hashpage.c:1037:5: note: in expansion of macro 'RelationOpenSmgr'
+ 1037 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+hashpage.c:1037:5: note: in expansion of macro 'RelationOpenSmgr'
+ 1037 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+In file included from rewriteheap.c:136:
+rewriteheap.c: In function 'end_heap_rewrite':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+rewriteheap.c:353:9: note: in expansion of macro 'RelationOpenSmgr'
+  353 |         RelationOpenSmgr(state->rs_new_rel);
+      |         ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+rewriteheap.c:353:9: note: in expansion of macro 'RelationOpenSmgr'
+  353 |         RelationOpenSmgr(state->rs_new_rel);
+      |         ^~~~~~~~~~~~~~~~
+rewriteheap.c: In function 'raw_heap_insert':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+rewriteheap.c:727:13: note: in expansion of macro 'RelationOpenSmgr'
+  727 |             RelationOpenSmgr(state->rs_new_rel);
+      |             ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+rewriteheap.c:727:13: note: in expansion of macro 'RelationOpenSmgr'
+  727 |             RelationOpenSmgr(state->rs_new_rel);
+      |             ^~~~~~~~~~~~~~~~
+event_trigger.c: In function 'EventTriggerAlterTableEnd':
+event_trigger.c:1853:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1853 |     if (!currentEventTriggerState ||
+      |     ^~
+event_trigger.c:1857:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1857 |         parent = currentEventTriggerState->currentCommand->parent;
+      |         ^~~~~~
+event_trigger.c:1866:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 1866 |     else
+      |     ^~~~
+event_trigger.c:1869:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 1869 |         currentEventTriggerState->currentCommand = parent;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+lwlock.c: In function 'InitializeLWLocks':
+lwlock.c:460:5: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+  460 |     for (id = 0; id < NUM_PREDICATELOCK_PARTITIONS; id++, lock++)
+      |     ^~~
+lwlock.c:464:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+  464 |         lock = MainLWLockArray + NUM_INDIVIDUAL_LWLOCKS +
+      |         ^~~~
+prepunion.c: In function 'adjust_appendrel_attrs_multilevel':
+prepunion.c:2517:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2517 |     if (!bms_equal(parent_relids, top_parent_relids))
+      |     ^~
+prepunion.c:2522:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2522 |         node = adjust_appendrel_attrs(root, node, nappinfos, appinfos);
+      |         ^~~~
+fd.c: In function 'OpenTemporaryFileInTablespace':
+fd.c:1510:54: warning: '%s' directive output may be truncated writing 9 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 1510 |     snprintf(tempfilepath, sizeof(tempfilepath), "%s/%s%d.%ld",
+      |                                                      ^~
+fd.c:1510:5: note: 'snprintf' output between 14 and 1066 bytes into a destination of size 1024
+ 1510 |     snprintf(tempfilepath, sizeof(tempfilepath), "%s/%s%d.%ld",
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1511 |              tempdirpath, PG_TEMP_FILE_PREFIX, MyProcPid, tempFileCounter++);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from bufmgr.c:55:
+bufmgr.c: In function 'PrefetchBuffer':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+bufmgr.c:578:5: note: in expansion of macro 'RelationOpenSmgr'
+  578 |     RelationOpenSmgr(reln);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+bufmgr.c:578:5: note: in expansion of macro 'RelationOpenSmgr'
+  578 |     RelationOpenSmgr(reln);
+      |     ^~~~~~~~~~~~~~~~
+bufmgr.c: In function 'ReadBufferExtended':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+bufmgr.c:689:5: note: in expansion of macro 'RelationOpenSmgr'
+  689 |     RelationOpenSmgr(reln);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+bufmgr.c:689:5: note: in expansion of macro 'RelationOpenSmgr'
+  689 |     RelationOpenSmgr(reln);
+      |     ^~~~~~~~~~~~~~~~
+In file included from ../../../../src/include/storage/lmgr.h:23,
+                 from visibilitymap.c:95:
+visibilitymap.c: In function 'visibilitymap_truncate':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+visibilitymap.c:497:5: note: in expansion of macro 'RelationOpenSmgr'
+  497 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+visibilitymap.c:497:5: note: in expansion of macro 'RelationOpenSmgr'
+  497 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+visibilitymap.c: In function 'vm_readbuf':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+visibilitymap.c:607:5: note: in expansion of macro 'RelationOpenSmgr'
+  607 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+visibilitymap.c:607:5: note: in expansion of macro 'RelationOpenSmgr'
+  607 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+In file included from ../../../../src/include/storage/lmgr.h:23,
+                 from hio.c:28:
+hio.c: In function 'RelationGetBufferForTuple_shard':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+../../../../src/include/utils/rel.h:537:17: note: in expansion of macro 'RelationOpenSmgr'
+  537 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:911:21: note: in expansion of macro 'RelationSetTargetBlock_Shard'
+  911 |                     RelationSetTargetBlock_Shard(relation, targetBlock, sid);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+../../../../src/include/utils/rel.h:537:17: note: in expansion of macro 'RelationOpenSmgr'
+  537 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:911:21: note: in expansion of macro 'RelationSetTargetBlock_Shard'
+  911 |                     RelationSetTargetBlock_Shard(relation, targetBlock, sid);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+../../../../src/include/utils/rel.h:530:17: note: in expansion of macro 'RelationOpenSmgr'
+  530 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:922:17: note: in expansion of macro 'RelationSetTargetBlock'
+  922 |                 RelationSetTargetBlock(relation,targetBlock);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+../../../../src/include/utils/rel.h:530:17: note: in expansion of macro 'RelationOpenSmgr'
+  530 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:922:17: note: in expansion of macro 'RelationSetTargetBlock'
+  922 |                 RelationSetTargetBlock(relation,targetBlock);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+hio.c:1101:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1101 |     if (!PageIsNew(page))
+      |     ^~
+hio.c:1106:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1106 |         PageInit_shard(page, BufferGetPageSize(buffer), 0, sid, false);
+      |         ^~~~~~~~~~~~~~
+visibilitymap.c: In function 'vm_extend':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+visibilitymap.c:669:5: note: in expansion of macro 'RelationOpenSmgr'
+  669 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+visibilitymap.c:669:5: note: in expansion of macro 'RelationOpenSmgr'
+  669 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+In file included from ../../../../src/include/storage/lmgr.h:23,
+                 from hio.c:28:
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+../../../../src/include/utils/rel.h:537:17: note: in expansion of macro 'RelationOpenSmgr'
+  537 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:1124:9: note: in expansion of macro 'RelationSetTargetBlock_Shard'
+ 1124 |         RelationSetTargetBlock_Shard(relation, BufferGetBlockNumber(buffer), sid);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+../../../../src/include/utils/rel.h:537:17: note: in expansion of macro 'RelationOpenSmgr'
+  537 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:1124:9: note: in expansion of macro 'RelationSetTargetBlock_Shard'
+ 1124 |         RelationSetTargetBlock_Shard(relation, BufferGetBlockNumber(buffer), sid);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+../../../../src/include/utils/rel.h:530:17: note: in expansion of macro 'RelationOpenSmgr'
+  530 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:1126:9: note: in expansion of macro 'RelationSetTargetBlock'
+ 1126 |         RelationSetTargetBlock(relation, BufferGetBlockNumber(buffer));
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+../../../../src/include/utils/rel.h:530:17: note: in expansion of macro 'RelationOpenSmgr'
+  530 |                 RelationOpenSmgr(relation); \
+      |                 ^~~~~~~~~~~~~~~~
+hio.c:1126:9: note: in expansion of macro 'RelationSetTargetBlock'
+ 1126 |         RelationSetTargetBlock(relation, BufferGetBlockNumber(buffer));
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+tzparser.c: In function 'ParseTzFile':
+tzparser.c:320:47: warning: '/timezonesets/' directive output may be truncated writing 14 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  320 |     snprintf(file_path, sizeof(file_path), "%s/timezonesets/%s",
+      |                                               ^~~~~~~~~~~~~~
+tzparser.c:320:5: note: 'snprintf' output 15 or more bytes (assuming 1038) into a destination of size 1024
+  320 |     snprintf(file_path, sizeof(file_path), "%s/timezonesets/%s",
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  321 |              share_path, filename);
+      |              ~~~~~~~~~~~~~~~~~~~~~
+tzparser.c:334:51: warning: '/timezonesets' directive output may be truncated writing 13 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  334 |         snprintf(file_path, sizeof(file_path), "%s/timezonesets",
+      |                                                   ^~~~~~~~~~~~~
+tzparser.c:334:9: note: 'snprintf' output between 14 and 1037 bytes into a destination of size 1024
+  334 |         snprintf(file_path, sizeof(file_path), "%s/timezonesets",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  335 |                  share_path);
+      |                  ~~~~~~~~~~~
+portalcmds.c: In function 'PortalCleanup':
+portalcmds.c:348:25: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  348 |                         if (!queryDesc->estate->es_finished)
+      |                         ^~
+portalcmds.c:350:29: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  350 |                             ExecutorEnd(queryDesc);
+      |                             ^~~~~~~~~~~
+In file included from emapage.c:35:
+emapage.c: In function 'extent_readbuffer':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+emapage.c:130:5: note: in expansion of macro 'RelationOpenSmgr'
+  130 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+emapage.c:130:5: note: in expansion of macro 'RelationOpenSmgr'
+  130 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+bufmgr.c: In function 'RelationGetNumberOfBlocksInFork':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+bufmgr.c:3028:5: note: in expansion of macro 'RelationOpenSmgr'
+ 3028 |     RelationOpenSmgr(relation);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+bufmgr.c:3028:5: note: in expansion of macro 'RelationOpenSmgr'
+ 3028 |     RelationOpenSmgr(relation);
+      |     ^~~~~~~~~~~~~~~~
+In file included from ../../../src/include/access/tupconvert.h:19,
+                 from ../../../src/include/nodes/execnodes.h:23,
+                 from ../../../src/include/catalog/partition.h:21,
+                 from ../../../src/include/executor/executor.h:21,
+                 from ../../../src/include/commands/vacuum.h:24,
+                 from storage.c:34:
+storage.c: In function 'RelationTruncate':
+../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+storage.c:268:5: note: in expansion of macro 'RelationOpenSmgr'
+  268 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+storage.c:268:5: note: in expansion of macro 'RelationOpenSmgr'
+  268 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+bufmgr.c: In function 'FlushRelationBuffers':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+bufmgr.c:3477:5: note: in expansion of macro 'RelationOpenSmgr'
+ 3477 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+bufmgr.c:3477:5: note: in expansion of macro 'RelationOpenSmgr'
+ 3477 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+bufmgr.c: In function 'ConditionalLockBuffer':
+bufmgr.c:3933:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 3933 |     if (BufferIsLocal(buffer))
+      |     ^~
+bufmgr.c:3936:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 3936 |         BufDisableMemoryProtection(BufferGetPage(buffer), false);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+emapage.c: In function 'extent_extend_block':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+emapage.c:319:5: note: in expansion of macro 'RelationOpenSmgr'
+  319 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+emapage.c:319:5: note: in expansion of macro 'RelationOpenSmgr'
+  319 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+gtm.c: In function 'GetGlobalTimestampGTM':
+gtm.c:1550:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1550 |     if (log_gtm_stats)
+      |     ^~
+gtm.c:1553:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1553 |         latest_gts = GetLatestCommitTS();
+      |         ^~~~~~~~~~
+In file included from ../../../src/include/access/tupconvert.h:19,
+                 from ../../../src/include/nodes/execnodes.h:23,
+                 from ../../../src/include/catalog/index.h:21,
+                 from heap.c:45:
+heap.c: In function 'heap_create':
+../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+heap.c:495:9: note: in expansion of macro 'RelationOpenSmgr'
+  495 |         RelationOpenSmgr(rel);
+      |         ^~~~~~~~~~~~~~~~
+../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+heap.c:495:9: note: in expansion of macro 'RelationOpenSmgr'
+  495 |         RelationOpenSmgr(rel);
+      |         ^~~~~~~~~~~~~~~~
+portalmem.c: In function 'PortalDrop':
+portalmem.c:567:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  567 |     if (portal->portalPinned ||
+      |     ^~
+portalmem.c:573:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  573 |         if (PortalDrop_hook)
+      |         ^~
+ts_utils.c: In function 'get_tsearch_config_filename':
+ts_utils.c:56:36: warning: '/tsearch_data/' directive output may be truncated writing 14 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+   56 |     snprintf(result, MAXPGPATH, "%s/tsearch_data/%s.%s",
+      |                                    ^~~~~~~~~~~~~~
+ts_utils.c:56:5: note: 'snprintf' output 16 or more bytes (assuming 1039) into a destination of size 1024
+   56 |     snprintf(result, MAXPGPATH, "%s/tsearch_data/%s.%s",
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   57 |              sharepath, basename, extension);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+execMain.c: In function 'ExecutePlan':
+execMain.c:2039:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2039 |     if (use_parallel_mode)
+      |     ^~
+execMain.c:2042:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2042 |         if (operation == CMD_INSERT && planstate->plan->type == T_RemoteQuery)
+      |         ^~
+gistget.c: In function 'gistkillitems':
+gistget.c:56:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   56 |     if (!BufferIsValid(buffer))
+      |     ^~
+gistget.c:59:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   59 |         if (enable_buffer_mprotect)
+      |         ^~
+snapmgr.c: In function 'ExportSnapshot':
+snapmgr.c:1530:43: warning: '.tmp' directive output may be truncated writing 4 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 1530 |     snprintf(pathtmp, sizeof(pathtmp), "%s.tmp", path);
+      |                                           ^~~~
+snapmgr.c:1530:5: note: 'snprintf' output between 5 and 1028 bytes into a destination of size 1024
+ 1530 |     snprintf(pathtmp, sizeof(pathtmp), "%s.tmp", path);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+functioncmds.c: In function 'compute_attributes_sql_style':
+functioncmds.c:739:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  739 |     if (leakproof_item)
+      |     ^~
+functioncmds.c:741:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  741 |         if (pushdown_item)
+      |         ^~
+In file included from ../../../src/include/access/tupconvert.h:19,
+                 from ../../../src/include/nodes/execnodes.h:23,
+                 from ../../../src/include/bootstrap/bootstrap.h:21,
+                 from index.c:35:
+index.c: In function 'index_build':
+../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+index.c:2321:9: note: in expansion of macro 'RelationOpenSmgr'
+ 2321 |         RelationOpenSmgr(indexRelation);
+      |         ^~~~~~~~~~~~~~~~
+../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+index.c:2321:9: note: in expansion of macro 'RelationOpenSmgr'
+ 2321 |         RelationOpenSmgr(indexRelation);
+      |         ^~~~~~~~~~~~~~~~
+pause.c: In function 'PGXCCleanClusterLock':
+pause.c:309:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  309 |     if (IsConnFromCoord())
+      |     ^~
+pause.c:312:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  312 |         coord_handles = get_handles(NIL, GetAllCoordNodes(), true, true, true);
+      |         ^~~~~~~~~~~~~
+planner.c: In function 'inheritance_planner':
+planner.c:1727:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 1727 |     else
+      |     ^~~~
+planner.c:1730:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 1730 |         if (partitioned_relids)
+      |         ^~
+costsize.c: In function 'compute_bitmap_pages':
+costsize.c:5419:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 5419 |     else
+      |     ^~~~
+costsize.c:5422:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 5422 |         if (maxentries < heap_pages)
+      |         ^~
+heap.c: In function 'heap_create_init_fork':
+../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+heap.c:2404:5: note: in expansion of macro 'RelationOpenSmgr'
+ 2404 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+heap.c:2404:5: note: in expansion of macro 'RelationOpenSmgr'
+ 2404 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+spi.c: In function '_SPI_pquery':
+spi.c:2430:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 2430 |     else
+      |     ^~~~
+spi.c:2433:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 2433 |         if (queryDesc->plannedstmt->hasReturning)
+      |         ^~
+execParallel.c: In function 'ExecParallelInitializeWorker':
+execParallel.c:1281:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1281 |     if (planstate == NULL)
+      |     ^~
+execParallel.c:1284:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1284 |         switch (nodeTag(planstate))
+      |         ^~~~~~
+indexcmds.c: In function 'DefineIndex':
+indexcmds.c:930:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  930 |     if (stmt->idxcomment != NULL)
+      |     ^~
+indexcmds.c:934:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  934 |         if (partitioned)
+      |         ^~
+joinpath.c: In function 'add_paths_to_joinrel':
+joinpath.c:219:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  219 |     if (jointype == JOIN_SEMI || jointype == JOIN_ANTI ||
+      |     ^~
+In file included from ../../../../src/include/access/tupdesc.h:22,
+                 from ../../../../src/include/executor/tuptable.h:22,
+                 from ../../../../src/include/catalog/partition.h:20,
+                 from ../../../../src/include/executor/executor.h:21,
+                 from joinpath.c:21:
+../../../../src/include/nodes/pg_list.h:162:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  162 |     for ((cell) = list_head(l); (cell) != NULL; (cell) = lnext(cell))
+      |     ^~~
+joinpath.c:241:9: note: in expansion of macro 'foreach'
+  241 |         foreach(lc, root->join_info_list)
+      |         ^~~~~~~
+tablecmds.c: In function 'ATController':
+tablecmds.c:4797:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 4797 |                 if (list_length(tab->subcmds[AT_PASS_ADD_COL]) > 0 ||
+      |                 ^~
+tablecmds.c:4812:21: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 4812 |                     redistribState = BuildRedistribCommands(RelationGetRelid(rel),
+      |                     ^~~~~~~~~~~~~~
+joinpath.c: In function 'try_partial_nestloop_path':
+joinpath.c:531:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  531 |     if (!add_partial_path_precheck(joinrel, workspace.total_cost, pathkeys))
+      |     ^~
+joinpath.c:538:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  538 |         if (PATH_PARAM_BY_PARENT(inner_path, outer_path->parent))
+      |         ^~
+relcache.c: In function 'RelationLRUInsert':
+relcache.c:256:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  256 |     if (hentry == NULL) \
+      |     ^~
+relcache.c:2470:33: note: in expansion of macro 'RelationCacheDelete'
+ 2470 |                                 RelationCacheDelete(relation);
+      |                                 ^~~~~~~~~~~~~~~~~~~
+relcache.c:260:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  260 |         RelationLRUDelete(RELATION); \
+      |         ^~~~~~~~~~~~~~~~~
+relcache.c:2470:33: note: in expansion of macro 'RelationCacheDelete'
+ 2470 |                                 RelationCacheDelete(relation);
+      |                                 ^~~~~~~~~~~~~~~~~~~
+ruleutils.c: In function 'pg_get_functiondef':
+ruleutils.c:2616:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2616 |     if (proc->proleakproof)
+      |     ^~
+ruleutils.c:2618:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2618 |         if (proc->procost < 0)
+      |         ^~
+relcache.c: In function 'RelationClearRelation':
+relcache.c:256:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  256 |     if (hentry == NULL) \
+      |     ^~
+relcache.c:2869:9: note: in expansion of macro 'RelationCacheDelete'
+ 2869 |         RelationCacheDelete(relation);
+      |         ^~~~~~~~~~~~~~~~~~~
+indexcmds.c: In function 'RangeVarCallbackForReindexIndex':
+indexcmds.c:2292:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2292 |     if (!relkind)
+      |     ^~
+indexcmds.c:2294:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2294 |         if (relkind != RELKIND_INDEX &&
+      |         ^~
+nodeModifyTable.c: In function 'ExecDelete':
+nodeModifyTable.c:1080:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1080 |     if (canSetTag)
+      |     ^~
+nodeModifyTable.c:1084:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1084 |         if (tupleDeleted)
+      |         ^~
+relcache.c:260:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  260 |         RelationLRUDelete(RELATION); \
+      |         ^~~~~~~~~~~~~~~~~
+relcache.c:2869:9: note: in expansion of macro 'RelationCacheDelete'
+ 2869 |         RelationCacheDelete(relation);
+      |         ^~~~~~~~~~~~~~~~~~~
+createplan.c: In function 'create_remotequery_for_rel':
+createplan.c:9244:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 9244 |     if (rel_loc_info == NULL)
+      |     ^~
+createplan.c:9247:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 9247 |         if (partindex >= 0)
+      |         ^~
+be-secure-openssl.c: In function 'load_dh_file':
+be-secure-openssl.c:914:5: warning: 'PEM_read_DHparams' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  914 |     dh = PEM_read_DHparams(fp, NULL, NULL, NULL);
+      |     ^~
+In file included from /usr/include/openssl/ssl.h:36,
+                 from be-secure-openssl.c:54:
+/usr/include/openssl/pem.h:469:1: note: declared here
+  469 | DECLARE_PEM_rw_attr(OSSL_DEPRECATEDIN_3_0, DHparams, DH)
+      | ^~~~~~~~~~~~~~~~~~~
+be-secure-openssl.c:927:5: warning: 'DH_check' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  927 |     if (DH_check(dh, &codes) == 0)
+      |     ^~
+In file included from /usr/include/openssl/dsa.h:51,
+                 from /usr/include/openssl/x509.h:37,
+                 from /usr/include/openssl/ssl.h:31,
+                 from be-secure-openssl.c:54:
+/usr/include/openssl/dh.h:224:27: note: declared here
+  224 | OSSL_DEPRECATEDIN_3_0 int DH_check(const DH *dh, int *codes);
+      |                           ^~~~~~~~
+be-secure-openssl.c: In function 'load_dh_buffer':
+be-secure-openssl.c:969:5: warning: 'PEM_read_bio_DHparams' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  969 |     dh = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
+      |     ^~
+In file included from /usr/include/openssl/ssl.h:36,
+                 from be-secure-openssl.c:54:
+/usr/include/openssl/pem.h:469:1: note: declared here
+  469 | DECLARE_PEM_rw_attr(OSSL_DEPRECATEDIN_3_0, DHparams, DH)
+      | ^~~~~~~~~~~~~~~~~~~
+be-secure-openssl.c: In function 'initialize_ecdh':
+be-secure-openssl.c:1124:5: warning: 'EC_KEY_new_by_curve_name' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1124 |     ecdh = EC_KEY_new_by_curve_name(nid);
+      |     ^~~~
+In file included from /usr/include/openssl/x509.h:33,
+                 from /usr/include/openssl/ssl.h:31,
+                 from be-secure-openssl.c:54:
+/usr/include/openssl/ec.h:998:31: note: declared here
+  998 | OSSL_DEPRECATEDIN_3_0 EC_KEY *EC_KEY_new_by_curve_name(int nid);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+be-secure-openssl.c:1135:5: warning: 'EC_KEY_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 1135 |     EC_KEY_free(ecdh);
+      |     ^~~~~~~~~~~
+In file included from /usr/include/openssl/x509.h:33,
+                 from /usr/include/openssl/ssl.h:31,
+                 from be-secure-openssl.c:54:
+/usr/include/openssl/ec.h:1003:28: note: declared here
+ 1003 | OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+      |                            ^~~~~~~~~~~
+planner.c: In function 'can_push_down_grouping':
+planner.c:8549:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8549 |     if (parse->groupingSets)
+      |     ^~
+planner.c:8552:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8552 |         return grouping_distribution_match(root, parse, path, parse->groupClause, parse->targetList);
+      |         ^~~~~~
+tablecmds.c: In function 'ATPrepSetStatistics':
+tablecmds.c:8133:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8133 |     if (rel->rd_rel->relkind != RELKIND_RELATION &&
+      |     ^~
+tablecmds.c:8148:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8148 |         if (rel->rd_rel->relkind != RELKIND_INDEX &&
+      |         ^~
+tablecmds.c: In function 'ATExecSetStatistics':
+extension.c: In function 'get_extension_control_directory':
+extension.c:411:36: warning: '/extension' directive output may be truncated writing 10 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  411 |     snprintf(result, MAXPGPATH, "%s/extension", sharepath);
+      |                                    ^~~~~~~~~~
+extension.c:411:5: note: 'snprintf' output between 11 and 1034 bytes into a destination of size 1024
+  411 |     snprintf(result, MAXPGPATH, "%s/extension", sharepath);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+extension.c: In function 'get_extension_control_filename':
+extension.c:424:36: warning: '/extension/' directive output may be truncated writing 11 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+  424 |     snprintf(result, MAXPGPATH, "%s/extension/%s.control",
+      |                                    ^~~~~~~~~~~
+extension.c:424:5: note: 'snprintf' output 20 or more bytes (assuming 1043) into a destination of size 1024
+  424 |     snprintf(result, MAXPGPATH, "%s/extension/%s.control",
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  425 |              sharepath, extname);
+      |              ~~~~~~~~~~~~~~~~~~~
+extension.c: In function 'get_extension_script_directory':
+extension.c:448:39: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+  448 |     snprintf(result, MAXPGPATH, "%s/%s", sharepath, control->directory);
+      |                                       ^
+extension.c:448:5: note: 'snprintf' output 2 or more bytes (assuming 1025) into a destination of size 1024
+  448 |     snprintf(result, MAXPGPATH, "%s/%s", sharepath, control->directory);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tablecmds.c:8208:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8208 |     if (attnum <= 0)
+      |     ^~
+tablecmds.c:8214:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8214 |         if ((rel->rd_rel->relkind == RELKIND_INDEX ||
+      |         ^~
+emapage.c: In function 'RebuildExtentMap':
+../../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+emapage.c:7023:5: note: in expansion of macro 'RelationOpenSmgr'
+ 7023 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+emapage.c:7023:5: note: in expansion of macro 'RelationOpenSmgr'
+ 7023 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+tablecmds.c: In function 'ATExecDropColumn':
+tablecmds.c:8448:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8448 |     if (recursing)
+      |     ^~
+In file included from ../../../src/include/postgres.h:51,
+                 from tablecmds.c:19:
+../../../src/include/c.h:698:30: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  698 | #define Assert(condition)    ((void)true)
+      |                              ^
+tablecmds.c:8452:9: note: in expansion of macro 'Assert'
+ 8452 |         Assert(!recursing || addrs != NULL);
+      |         ^~~~~~
+tablecmds.c:8492:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8492 |     if (targetatt->attinhcount > 0 && !recursing)
+      |     ^~
+tablecmds.c:8503:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8503 |         if (has_partition_attrs(rel,
+      |         ^~
+twophase.c: In function 'rename_2pc_records':
+twophase.c:4203:39: warning: '%ld' directive output may be truncated writing between 1 and 20 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 4203 |         snprintf(new_path, MAXPGPATH, "%s." INT64_FORMAT ".rollback", path, timestamp);
+      |                                       ^~~~~
+In file included from ../../../../src/include/postgres.h:51,
+                 from twophase.c:76:
+../../../../src/include/c.h:318:23: note: format string is defined here
+  318 | #define INT64_FORMAT "%" INT64_MODIFIER "d"
+      |                       ^~~~~~~~~~~~~~~~~~~~
+twophase.c:4203:9: note: 'snprintf' output between 12 and 1054 bytes into a destination of size 1024
+ 4203 |         snprintf(new_path, MAXPGPATH, "%s." INT64_FORMAT ".rollback", path, timestamp);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+twophase.c: In function 'get_2pc_list_from_cache':
+twophase.c:4394:25: warning: 'sprintf' argument 3 overlaps destination object 'recordList' [-Wrestrict]
+ 4394 |                         sprintf(recordList, "%s,%s", recordList, entry->key);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+postgres.c: In function 'pg_rewrite_query':
+postgres.c:1033:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1033 |     if (log_parser_stats)
+      |     ^~
+postgres.c:1036:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1036 |         if (query->commandType == CMD_UTILITY)
+      |         ^~
+clauses.c: In function 'contain_user_defined_functions_checker':
+clauses.c:923:31: warning: implicit declaration of function 'get_language_oid'; did you mean 'get_language_name'? [-Wimplicit-function-declaration]
+  923 |                 plpgsql_oid = get_language_oid("plpgsql", true);
+      |                               ^~~~~~~~~~~~~~~~
+      |                               get_language_name
+hba.c: In function 'mls_next_field_expand':
+hba.c:474:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  474 |         if (!next_token(lineptr, buf, sizeof(buf),
+      |         ^~
+hba.c:479:13: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  479 |             tokens = lappend(tokens, make_hba_token(buf, initial_quote));
+      |             ^~~~~~
+subselect.c: In function 'convert_EXPR_sublink_to_join':
+subselect.c:2681:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2681 |     if (list_length(subselect->targetList) != 1)
+      |     ^~
+subselect.c:2685:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2685 |         tent = (TargetEntry *)linitial(subselect->targetList);
+      |         ^~~~
+guc.c: In function 'parse_uint':
+guc.c:8136:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8136 |     if (endptr == value)
+      |     ^~
+guc.c:8139:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8139 |         if (errno == ERANGE || val != (uint64) ((uint32) val))
+      |         ^~
+plancat.c: In function 'relation_excluded_by_constraints':
+plancat.c:1577:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1577 |     if (predicate_refuted_by(safe_restrictions, safe_restrictions, false))
+      |     ^~
+plancat.c:1590:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1590 |         if (rte->rtekind != RTE_RELATION ||
+      |         ^~
+poolmgr.c: In function 'get_system_time':
+poolmgr.c:2134:5: warning: 'ftime' is deprecated: Use gettimeofday or clock_gettime instead [-Wdeprecated-declarations]
+ 2134 |     ftime(&t);
+      |     ^~~~~
+In file included from poolmgr.c:72:
+/usr/include/x86_64-linux-gnu/sys/timeb.h:29:12: note: declared here
+   29 | extern int ftime (struct timeb *__timebuf)
+      |            ^~~~~
+execRemote.c: In function 'pgxc_node_remote_prepare':
+execRemote.c:4780:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 4780 |     else
+      |     ^~~~
+execRemote.c:4783:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 4783 |         if (!temp_object_included && !PersistentConnections)
+      |         ^~
+In file included from ../../../src/include/access/tupconvert.h:19,
+                 from tablecmds.c:27:
+tablecmds.c: In function 'ATExecSetTableSpace':
+../../../src/include/utils/rel.h:490:17: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  490 |                 if ((relation)->rd_smgr == NULL) \
+      |                 ^~
+tablecmds.c:12907:5: note: in expansion of macro 'RelationOpenSmgr'
+12907 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+../../../src/include/utils/rel.h:492:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  492 |                         (relation)->rd_smgr->smgr_hasextent = RelationHasExtent(relation); \
+      |                         ^
+tablecmds.c:12907:5: note: in expansion of macro 'RelationOpenSmgr'
+12907 |     RelationOpenSmgr(rel);
+      |     ^~~~~~~~~~~~~~~~
+ruleutils.c: In function 'GetPartitionName':
+ruleutils.c:11704:21: warning: '_part_' directive output may be truncated writing 6 bytes into a region of size between 1 and 64 [-Wformat-truncation=]
+11704 |                  "%s_part_%d", relname, partidx);
+      |                     ^~~~~~
+ruleutils.c:11703:5: note: 'snprintf' output between 8 and 81 bytes into a destination of size 64
+11703 |     snprintf(partname, NAMEDATALEN,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+11704 |                  "%s_part_%d", relname, partidx);
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ruleutils.c: In function 'pruning_walker':
+ruleutils.c:12261:30: warning: statement will never be executed [-Wswitch-unreachable]
+12261 |                     temp_bms = NULL;
+      |                              ^
+execRemote.c: In function 'pgxc_start_command_on_connection':
+execRemote.c:6744:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 6744 |     if (snapshot && pgxc_node_send_snapshot(connection, snapshot))
+      |     ^~
+execRemote.c:6746:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 6746 |         if ((step->statement && step->statement[0] != '\0') ||
+      |         ^~
+tablecmds.c: In function 'RemoveInheritance':
+tablecmds.c:14089:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+14089 |     if (parent_rel->rd_rel->relkind == RELKIND_PARTITIONED_TABLE)
+      |     ^~
+tablecmds.c:14092:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+14092 |         found = DeleteInheritsTuple(RelationGetRelid(child_rel),
+      |         ^~~~~
+poolmgr.c: In function 'connect_pools':
+poolmgr.c:7431:19: warning: comparison between pointer and zero character constant [-Wpointer-compare]
+ 7431 |             if (p == '\0')
+      |                   ^~
+poolmgr.c:7431:17: note: did you mean to dereference the pointer?
+ 7431 |             if (p == '\0')
+      |                 ^
+pgxcnode.c: In function 'pgxc_node_send_query_extended':
+pgxcnode.c:2636:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2636 |     if (query)
+      |     ^~
+pgxcnode.c:2639:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2639 |         if (pgxc_node_send_bind(handle, portal, statement, paramlen, params, 0, NULL, NULL))
+      |         ^~
+pgxcnode.c:2644:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 2644 |     if (fetch_size >= 0)
+      |     ^~
+pgxcnode.c:2647:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 2647 |         if (pgxc_node_send_my_sync(handle))
+      |         ^~
+heap.c: In function 'GetRelationDistributionItems':
+heap.c:1611:25: warning: statement will never be executed [-Wswitch-unreachable]
+ 1611 |             const char *colname = NULL;
+      |                         ^~~~~~~
+guc.c: In function 'AlterSystemSetConfigFile':
+guc.c:10087:64: warning: '%s' directive output may be truncated writing 3 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+10087 |     snprintf(AutoConfTmpFileName, sizeof(AutoConfTmpFileName), "%s.%s",
+      |                                                                ^~~~~~~
+10088 |              AutoConfFileName,
+10089 |              "tmp");
+      |              ~~~~~                                              
+guc.c:10087:5: note: 'snprintf' output between 5 and 1028 bytes into a destination of size 1024
+10087 |     snprintf(AutoConfTmpFileName, sizeof(AutoConfTmpFileName), "%s.%s",
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10088 |              AutoConfFileName,
+      |              ~~~~~~~~~~~~~~~~~
+10089 |              "tmp");
+      |              ~~~~~~
+execRemote.c: In function 'pgxc_node_remote_prefinish':
+execRemote.c:8290:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8290 |     if (nodelist == NIL && coordlist == NIL)
+      |     ^~
+execRemote.c:8293:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8293 |         pgxc_handles = get_handles(nodelist, coordlist, false, true, true);
+      |         ^~~~~~~~~~~~
+execRemote.c: In function 'pgxc_node_remote_finish':
+execRemote.c:8651:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 8651 |     if (nodelist == NIL && coordlist == NIL)
+      |     ^~
+execRemote.c:8655:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 8655 |         pgxc_handles = get_handles(nodelist, coordlist, false, true, true);
+      |         ^~~~~~~~~~~~
+postmaster.c: In function 'TerminateChildren':
+postmaster.c:4612:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 4612 |     if (AutoVacPID != 0)
+      |     ^~
+postmaster.c:4614:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 4614 |         if (Clean2pcPID != 0)
+      |         ^~
+tablecmds.c: In function 'RangeVarCallbackForAlterRelation':
+tablecmds.c:16326:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+16326 |     if (reltype == OBJECT_TYPE && relkind != RELKIND_COMPOSITE_TYPE)
+      |     ^~
+tablecmds.c:16331:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+16331 |         if (reltype == OBJECT_INDEX && relkind != RELKIND_INDEX &&
+      |         ^~
+tablecmds.c: In function 'ATExecAttachPartition':
+tablecmds.c:17130:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+17130 |     if (trigger_name != NULL)
+      |     ^~
+tablecmds.c:17138:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+17138 |         if (cmd->bound->is_default)
+      |         ^~
+xlog.c: In function 'StartupXLOG':
+xlog.c:8152:56: warning: '.partial' directive output may be truncated writing 8 bytes into a region of size between 1 and 64 [-Wformat-truncation=]
+ 8152 |                 snprintf(partialfname, MAXFNAMELEN, "%s.partial", origfname);
+      |                                                        ^~~~~~~~
+xlog.c:8152:17: note: 'snprintf' output between 9 and 72 bytes into a destination of size 64
+ 8152 |                 snprintf(partialfname, MAXFNAMELEN, "%s.partial", origfname);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xlog.c:8153:53: warning: '.partial' directive output may be truncated writing 8 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 8153 |                 snprintf(partialpath, MAXPGPATH, "%s.partial", origpath);
+      |                                                     ^~~~~~~~
+xlog.c:8153:17: note: 'snprintf' output between 9 and 1032 bytes into a destination of size 1024
+ 8153 |                 snprintf(partialpath, MAXPGPATH, "%s.partial", origpath);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tablecmds.c: In function 'RenameRelation':
+tablecmds.c:4160:37: warning: '_part_' directive output may be truncated writing 6 bytes into a region of size between 1 and 64 [-Wformat-truncation=]
+ 4160 |                                  "%s_part_%d", relname, i);
+      |                                     ^~~~~~
+tablecmds.c:4159:21: note: 'snprintf' output between 8 and 81 bytes into a destination of size 64
+ 4159 |                     snprintf(partname, NAMEDATALEN,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 4160 |                                  "%s_part_%d", relname, i);
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+postmaster.c: In function 'BackendInitialize':
+postmaster.c:4865:62: warning: '%s' directive output may be truncated writing up to 31 bytes into a region of size between 0 and 1024 [-Wformat-truncation=]
+ 4865 |         snprintf(remote_ps_data, sizeof(remote_ps_data), "%s(%s)", remote_host, remote_port);
+      |                                                              ^~                 ~~~~~~~~~~~
+postmaster.c:4865:9: note: 'snprintf' output between 3 and 1058 bytes into a destination of size 1025
+ 4865 |         snprintf(remote_ps_data, sizeof(remote_ps_data), "%s(%s)", remote_host, remote_port);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+postmaster.c: In function 'StartBouncer':
+postmaster.c:7251:44: warning: '/pgbouncer' directive output may be truncated writing 10 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 7251 |                 snprintf(bouncer, 1024, "%s/pgbouncer", conf);
+      |                                            ^~~~~~~~~~
+postmaster.c:7251:17: note: 'snprintf' output between 11 and 1034 bytes into a destination of size 1024
+ 7251 |                 snprintf(bouncer, 1024, "%s/pgbouncer", conf);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+postmaster.c: In function 'StartGTMProxy':
+postmaster.c:7311:42: warning: '/gtm_proxy' directive output may be truncated writing 10 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 7311 |                 snprintf(proxy, 1024, "%s/gtm_proxy", conf);
+      |                                          ^~~~~~~~~~
+postmaster.c:7311:17: note: 'snprintf' output between 11 and 1034 bytes into a destination of size 1024
+ 7311 |                 snprintf(proxy, 1024, "%s/gtm_proxy", conf);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+squeue.c: In function 'SharedQueueWrite':
+squeue.c:1732:40: warning: ' node ' directive output may be truncated writing 6 bytes into a region of size between 1 and 64 [-Wformat-truncation=]
+ 1732 |             snprintf(storename, 64, "%s node %d", squeue->sq_key, cstate->cs_node);
+      |                                        ^~~~~~
+squeue.c:1732:13: note: 'snprintf' output between 8 and 81 bytes into a destination of size 64
+ 1732 |             snprintf(storename, 64, "%s node %d", squeue->sq_key, cstate->cs_node);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+squeue.c: In function 'SendDataRemote':
+squeue.c:5699:36: warning: ' node ' directive output may be truncated writing 6 bytes into a region of size between 1 and 64 [-Wformat-truncation=]
+ 5699 |         snprintf(storename, 64, "%s node %d", squeue->sq_key, cstate->cs_node);
+      |                                    ^~~~~~
+squeue.c:5699:9: note: 'snprintf' output between 8 and 81 bytes into a destination of size 64
+ 5699 |         snprintf(storename, 64, "%s node %d", squeue->sq_key, cstate->cs_node);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cat: ../../src/interfaces/libpq/objfiles.txt: No such file or directory
+findtimezone.c: In function 'identify_system_timezone':
+findtimezone.c:456:53: warning: '%s' directive output may be truncated writing up to 255 bytes into a region of size between 0 and 255 [-Wformat-truncation=]
+  456 |         snprintf(resultbuf, sizeof(resultbuf), "%s%d%s",
+      |                                                     ^~
+  457 |                  std_zone_name, -std_ofs / 3600, dst_zone_name);
+      |                                                  ~~~~~~~~~~~~~
+findtimezone.c:456:9: note: 'snprintf' output between 2 and 522 bytes into a destination of size 256
+  456 |         snprintf(resultbuf, sizeof(resultbuf), "%s%d%s",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  457 |                  std_zone_name, -std_ofs / 3600, dst_zone_name);
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+findtimezone.c:468:49: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+  468 |     snprintf(resultbuf, sizeof(resultbuf), "%s%d",
+      |                                                 ^
+findtimezone.c:468:5: note: 'snprintf' output between 2 and 267 bytes into a destination of size 256
+  468 |     snprintf(resultbuf, sizeof(resultbuf), "%s%d",
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  469 |              std_zone_name, -std_ofs / 3600);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pg_basebackup.c: In function 'ReceiveAndUnpackTarFile':
+pg_basebackup.c:1393:56: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+ 1393 |             snprintf(filename, sizeof(filename), "%s/%s", current_path,
+      |                                                        ^
+pg_basebackup.c:1393:13: note: 'snprintf' output 2 or more bytes (assuming 1025) into a destination of size 1024
+ 1393 |             snprintf(filename, sizeof(filename), "%s/%s", current_path,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1394 |                      copybuf);
+      |                      ~~~~~~~~
+compat.c: In function 'timestamptz_to_str':
+compat.c:61:22: warning: '%06d' directive writing between 6 and 11 bytes into a region of size between 0 and 128 [-Wformat-overflow=]
+   61 |     sprintf(buf, "%s.%06d %s", ts, (int) (dt % USECS_PER_SEC), zone);
+      |                      ^~~~
+compat.c:61:18: note: using the range [-2147483648, 2147483647] for directive argument
+   61 |     sprintf(buf, "%s.%06d %s", ts, (int) (dt % USECS_PER_SEC), zone);
+      |                  ^~~~~~~~~~~~
+compat.c:61:5: note: 'sprintf' output between 9 and 270 bytes into a destination of size 129
+   61 |     sprintf(buf, "%s.%06d %s", ts, (int) (dt % USECS_PER_SEC), zone);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pgbench.c: In function 'init':
+receivelog.c: In function 'ReceiveXlogStream':
+receivelog.c:601:59: warning: '%s' directive output may be truncated writing up to 127 bytes into a region of size 110 [-Wformat-truncation=]
+  601 |         snprintf(query, sizeof(query), "START_REPLICATION %s%X/%X TIMELINE %u",
+      |                                                           ^~
+  602 |                  slotcmd,
+      |                  ~~~~~~~                                   
+pgbench.c:2768:64: warning: '%s' directive output may be truncated writing up to 255 bytes into a region of size 241 [-Wformat-truncation=]
+ 2768 |         snprintf(buffer, sizeof(buffer), "create%s table %s(%s)%s",
+      |                                                                ^~
+ 2769 |                  unlogged_tables ? " unlogged" : "",
+ 2770 |                  ddl->table, cols, opts);
+      |                                    ~~~~                         
+receivelog.c:601:40: note: using the range [0, 4294967295] for directive argument
+  601 |         snprintf(query, sizeof(query), "START_REPLICATION %s%X/%X TIMELINE %u",
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+receivelog.c:601:40: note: using the range [0, 4294967295] for directive argument
+receivelog.c:601:9: note: 'snprintf' output between 33 and 183 bytes into a destination of size 128
+  601 |         snprintf(query, sizeof(query), "START_REPLICATION %s%X/%X TIMELINE %u",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  602 |                  slotcmd,
+      |                  ~~~~~~~~
+  603 |                  (uint32) (stream->startpos >> 32), (uint32) stream->startpos,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  604 |                  stream->timeline);
+      |                  ~~~~~~~~~~~~~~~~~
+pgbench.c:2768:9: note: 'snprintf' output 16 or more bytes (assuming 271) into a destination of size 256
+ 2768 |         snprintf(buffer, sizeof(buffer), "create%s table %s(%s)%s",
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2769 |                  unlogged_tables ? " unlogged" : "",
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2770 |                  ddl->table, cols, opts);
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~
+pgbench.c:2763:68: warning: '%s' directive output may be truncated writing up to 255 bytes into a region of size 241 [-Wformat-truncation=]
+ 2763 |             snprintf(buffer, sizeof(buffer), "create%s table %s(%s)%s %s",
+      |                                                                    ^~
+ 2764 |                      unlogged_tables ? " unlogged" : "",
+ 2765 |                      ddl->table, cols, opts, ddl->distribute_by);
+      |                                        ~~~~                         
+pgbench.c:2763:13: note: 'snprintf' output 17 or more bytes (assuming 272) into a destination of size 256
+ 2763 |             snprintf(buffer, sizeof(buffer), "create%s table %s(%s)%s %s",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2764 |                      unlogged_tables ? " unlogged" : "",
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2765 |                      ddl->table, cols, opts, ddl->distribute_by);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pg_backup_directory.c: In function '_LoadBlobs':
+pg_backup_directory.c:465:41: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+  465 |         snprintf(path, MAXPGPATH, "%s/%s", ctx->directory, fname);
+      |                                         ^
+pg_backup_directory.c:465:9: note: 'snprintf' output 2 or more bytes (assuming 1025) into a destination of size 1024
+  465 |         snprintf(path, MAXPGPATH, "%s/%s", ctx->directory, fname);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+startup.c: In function 'main':
+startup.c:393:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  393 |         if (!pset.quiet)
+      |         ^~
+startup.c:396:13: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  396 |             initializeInput(options.no_readline ? 0 : 1
+      |             ^~~~~~~~~~~~~~~
+startup.c: In function 'process_psqlrc':
+startup.c:723:38: warning: '%s' directive output may be truncated writing 6 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+  723 |     snprintf(rc_file, MAXPGPATH, "%s/%s", etc_path, SYSPSQLRC);
+      |                                      ^~
+startup.c:723:5: note: 'snprintf' output between 8 and 1031 bytes into a destination of size 1024
+  723 |     snprintf(rc_file, MAXPGPATH, "%s/%s", etc_path, SYSPSQLRC);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+startup.c:736:42: warning: '%s' directive output may be truncated writing 7 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+  736 |         snprintf(rc_file, MAXPGPATH, "%s/%s", home, PSQLRC);
+      |                                          ^~
+startup.c:736:9: note: 'snprintf' output between 9 and 1032 bytes into a destination of size 1024
+  736 |         snprintf(rc_file, MAXPGPATH, "%s/%s", home, PSQLRC);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+initdb.c: In function 'test_config_settings':
+initdb.c:982:23: warning: '" --boot -x0 ' directive output may be truncated writing 13 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+  982 |                  "\"%s\" --boot -x0 %s "
+      |                       ^~~~~~~~~~~~~~
+initdb.c:981:9: note: 'snprintf' output 124 or more bytes (assuming 1147) into a destination of size 1024
+  981 |         snprintf(cmd, sizeof(cmd),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  982 |                  "\"%s\" --boot -x0 %s "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~
+  983 |                  "-c max_connections=%d "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~
+  984 |                  "-c shared_buffers=%d "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~
+  985 |                  "-c dynamic_shared_memory_type=none "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  986 |                  "< \"%s\" > \"%s\" 2>&1",
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+  987 |                  backend_exec, boot_options,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  988 |                  test_conns, test_buffs,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~
+  989 |                  DEVNULL, DEVNULL);
+      |                  ~~~~~~~~~~~~~~~~~
+initdb.c:1017:23: warning: '" --boot -x0 ' directive output may be truncated writing 13 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 1017 |                  "\"%s\" --boot -x0 %s "
+      |                       ^~~~~~~~~~~~~~
+initdb.c:1016:9: note: 'snprintf' output 124 or more bytes (assuming 1147) into a destination of size 1024
+ 1016 |         snprintf(cmd, sizeof(cmd),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1017 |                  "\"%s\" --boot -x0 %s "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~
+ 1018 |                  "-c max_connections=%d "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~
+ 1019 |                  "-c shared_buffers=%d "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~
+ 1020 |                  "-c dynamic_shared_memory_type=none "
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1021 |                  "< \"%s\" > \"%s\" 2>&1",
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1022 |                  backend_exec, boot_options,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1023 |                  n_connections, test_buffs,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1024 |                  DEVNULL, DEVNULL);
+      |                  ~~~~~~~~~~~~~~~~~
+initdb.c: In function 'bootstrap_template1':
+initdb.c:1481:19: warning: '" --boot -x1 ' directive output may be truncated writing 13 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 1481 |              "\"%s\" --boot -x1 %s %s %s",
+      |                   ^~~~~~~~~~~~~~
+initdb.c:1480:5: note: 'snprintf' output 17 or more bytes (assuming 1040) into a destination of size 1024
+ 1480 |     snprintf(cmd, sizeof(cmd),
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1481 |              "\"%s\" --boot -x1 %s %s %s",
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1482 |              backend_exec,
+      |              ~~~~~~~~~~~~~
+ 1483 |              data_checksums ? "-k" : "",
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1484 |              boot_options, talkargs);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~
+initdb.c: In function 'vacuumfreeze':
+initdb.c:2117:19: warning: '" ' directive output may be truncated writing 2 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 2117 |              "\"%s\" %s %s >%s",
+      |                   ^~~
+initdb.c:2116:5: note: 'snprintf' output 16 or more bytes (assuming 1039) into a destination of size 1024
+ 2116 |     snprintf(cmd, sizeof(cmd),
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2117 |              "\"%s\" %s %s >%s",
+      |              ~~~~~~~~~~~~~~~~~~~
+ 2118 |              backend_exec, backend_options, dbname,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2119 |              DEVNULL);
+      |              ~~~~~~~~
+initdb.c: In function 'initialize_data_directory':
+initdb.c:3145:19: warning: '" ' directive output may be truncated writing 2 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+ 3145 |              "\"%s\" %s template1 >%s",
+      |                   ^~~
+initdb.c:3144:5: note: 'snprintf' output 25 or more bytes (assuming 1048) into a destination of size 1024
+ 3144 |     snprintf(cmd, sizeof(cmd),
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3145 |              "\"%s\" %s template1 >%s",
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3146 |              backend_exec, backend_options,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3147 |              DEVNULL);
+      |              ~~~~~~~~
+describe.c: In function 'describeOneTableDetails':
+describe.c:1628:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 1628 |     else
+      |     ^~~~
+describe.c:1630:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 1630 |         if (tableinfo.relkind == RELKIND_INDEX ||
+      |         ^~
+describe.c:1754:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+ 1754 |     if (tableinfo.relkind == RELKIND_SEQUENCE)
+      |     ^~
+describe.c:1757:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+ 1757 |         if (tableinfo.relkind == RELKIND_INDEX ||
+      |         ^~
+pg_dumpall.c: In function 'main':
+pg_dumpall.c:636:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  636 |     if (!globals_only && !roles_only && !tablespaces_only)
+      |     ^~
+pg_dumpall.c:642:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  642 |         if (dump_security_data)
+      |         ^~
+pg_regress.c: In function 'regression_main':
+pg_regress.c:3505:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+ 3505 |     else
+      |     ^~~~
+pg_regress.c:3513:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+ 3513 |         putchar('\n');
+      |         ^~~~~~~
+pg_regress.c: In function 'make_temp_sockdir':
+pg_regress.c:1201:45: warning: '.lock' directive output may be truncated writing 5 bytes into a region of size between 1 and 1024 [-Wformat-truncation=]
+ 1201 |     snprintf(socklock, sizeof(socklock), "%s.lock", sockself);
+      |                                             ^~~~~
+pg_regress.c:1201:5: note: 'snprintf' output between 6 and 1029 bytes into a destination of size 1024
+ 1201 |     snprintf(socklock, sizeof(socklock), "%s.lock", sockself);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pg_regress.c: In function 'convert_sourcefiles_in':
+pg_regress.c:1391:44: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+ 1391 |         snprintf(srcfile, MAXPGPATH, "%s/%s", indir, *name);
+      |                                            ^
+pg_regress.c:1391:9: note: 'snprintf' output 2 or more bytes (assuming 1025) into a destination of size 1024
+ 1391 |         snprintf(srcfile, MAXPGPATH, "%s/%s", indir, *name);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pg_regress.c:1392:46: warning: '%s' directive output may be truncated writing up to 1023 bytes into a region of size 1022 [-Wformat-truncation=]
+ 1392 |         snprintf(destfile, MAXPGPATH, "%s/%s/%s.%s", dest_dir, dest_subdir,
+      |                                              ^~
+ 1393 |                  prefix, suffix);
+      |                  ~~~~~~                       
+pg_regress.c:1392:9: note: 'snprintf' output 4 or more bytes (assuming 1027) into a destination of size 1024
+ 1392 |         snprintf(destfile, MAXPGPATH, "%s/%s/%s.%s", dest_dir, dest_subdir,
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1393 |                  prefix, suffix);
+      |                  ~~~~~~~~~~~~~~~
+All of Postgres-XL successfully made. Ready to install.

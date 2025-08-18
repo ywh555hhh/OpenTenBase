@@ -18,6 +18,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include "postgres.h" 
 #include "nodes/parsenodes.h"
 
 
