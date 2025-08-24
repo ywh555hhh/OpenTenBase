@@ -311,56 +311,58 @@ DefineQueryRewrite(char *rulename,
          *
          * So there cannot be INSTEAD NOTHING, ...
          */
-        if (list_length(action) == 0)
-            ereport(ERROR,
-                    (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-                     errmsg("INSTEAD NOTHING rules on SELECT are not implemented"),
-                     errhint("Use views instead.")));
+        if (!force)
+        {
+            if (list_length(action) == 0)
+                ereport(ERROR,
+                        (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+                         errmsg("INSTEAD NOTHING rules on SELECT are not implemented"),
+                         errhint("Use views instead.")));
 
-        /*
-         * ... there cannot be multiple actions, ...
-         */
-        if (list_length(action) > 1)
-            ereport(ERROR,
-                    (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-                     errmsg("multiple actions for rules on SELECT are not implemented")));
+            /*
+             * ... there cannot be multiple actions, ...
+             */
+            if (list_length(action) > 1)
+                ereport(ERROR,
+                        (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+                         errmsg("multiple actions for rules on SELECT are not implemented")));
 
-        /*
-         * ... the one action must be a SELECT, ...
-         */
-        query = linitial_node(Query, action);
-        if (!is_instead ||
-            query->commandType != CMD_SELECT)
-            ereport(ERROR,
-                    (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-                     errmsg("rules on SELECT must have action INSTEAD SELECT")));
+            /*
+             * ... the one action must be a SELECT, ...
+             */
+            query = linitial_node(Query, action);
+            if (!is_instead ||
+                query->commandType != CMD_SELECT)
+                ereport(ERROR,
+                        (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+                         errmsg("rules on SELECT must have action INSTEAD SELECT")));
 
-        /*
-         * ... it cannot contain data-modifying WITH ...
-         */
-        if (query->hasModifyingCTE)
-            ereport(ERROR,
-                    (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-                     errmsg("rules on SELECT must not contain data-modifying statements in WITH")));
+            /*
+             * ... it cannot contain data-modifying WITH ...
+             */
+            if (query->hasModifyingCTE)
+                ereport(ERROR,
+                        (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+                         errmsg("rules on SELECT must not contain data-modifying statements in WITH")));
 
-        /*
-         * ... there can be no rule qual, ...
-         */
-        if (event_qual != NULL)
-            ereport(ERROR,
-                    (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-                     errmsg("event qualifications are not implemented for rules on SELECT")));
+            /*
+             * ... there can be no rule qual, ...
+             */
+            if (event_qual != NULL)
+                ereport(ERROR,
+                        (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+                         errmsg("event qualifications are not implemented for rules on SELECT")));
 
-        /*
-         * ... the targetlist of the SELECT action must exactly match the
-         * event relation, ...
-         */
-        checkRuleResultList(query->targetList,
-                            RelationGetDescr(event_relation),
-                            true,
-                            event_relation->rd_rel->relkind !=
-                            RELKIND_MATVIEW);
-
+            /*
+             * ... the targetlist of the SELECT action must exactly match the
+             * event relation, ...
+             */
+            checkRuleResultList(query->targetList,
+                                RelationGetDescr(event_relation),
+                                true,
+                                event_relation->rd_rel->relkind !=
+                                RELKIND_MATVIEW);
+        }
         /*
          * ... there must not be another ON SELECT rule already ...
          */

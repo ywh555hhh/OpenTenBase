@@ -19,6 +19,8 @@
 
 #include <ctype.h>
 
+extern bool creating_force_view;
+
 #include "access/htup_details.h"
 #include "access/sysattr.h"
 #include "catalog/heap.h"
@@ -31,7 +33,6 @@
 #include "parser/parse_enr.h"
 #include "parser/parse_relation.h"
 #include "parser/parse_type.h"
-#include "parser/parser.h"
 #include "utils/builtins.h"
 #include "utils/elog.h"
 #include "utils/lsyscache.h"
@@ -684,7 +685,6 @@ scanRTEForColumn(ParseState *pstate, RangeTblEntry *rte, char *colname,
     int            attnum = 0;
     Var           *var;
     ListCell   *c;
-
     /*
      * Scan the user column names (or aliases) for a match. Complain if
      * multiple matches.
@@ -723,6 +723,15 @@ scanRTEForColumn(ParseState *pstate, RangeTblEntry *rte, char *colname,
         if (fuzzystate != NULL)
             updateFuzzyAttrMatchState(fuzzy_rte_penalty, fuzzystate,
                                       rte, attcolname, colname, attnum);
+    }
+
+    if (creating_force_view && rte->rtekind == RTE_RELATION && !OidIsValid(rte->relid))
+    {
+        rte->eref->colnames = lappend(rte->eref->colnames, makeString(pstrdup(colname)));
+        attnum = list_length(rte->eref->colnames);
+        var = make_var(pstate, rte, attnum, location);
+        markVarForSelectPriv(pstate, var, rte);
+        return (Node *) var;
     }
 
     /*
@@ -955,7 +964,7 @@ markRTEForSelectPriv(ParseState *pstate, RangeTblEntry *rte,
          */
 		if ((IS_PGXC_DATANODE || IsConnFromCoord()) && rte->relid == StatisticRelationId)
             rte->requiredPerms = 0;
-        else
+
 #endif
         /* Make sure the rel as a whole is marked for SELECT access */
         rte->requiredPerms |= ACL_SELECT;
@@ -1195,6 +1204,11 @@ parserOpenTable(ParseState *pstate, const RangeVar *relation, int lockmode)
     rel = heap_openrv_extended(relation, lockmode, true);
     if (rel == NULL)
     {
+        if (creating_force_view)
+        {
+            cancel_parser_errposition_callback(&pcbstate);
+            return NULL;
+        }
         if (relation->schemaname)
             ereport(ERROR,
                     (errcode(ERRCODE_UNDEFINED_TABLE),
@@ -1249,78 +1263,77 @@ addRangeTableEntry(ParseState *pstate,
     RangeTblEntry *rte = makeNode(RangeTblEntry);
     char       *refname = alias ? alias->aliasname : relation->relname;
     LOCKMODE    lockmode;
-    Relation    rel = NULL;
+    Relation    rel;
 
     Assert(pstate != NULL);
 
     rte->rtekind = RTE_RELATION;
     rte->alias = alias;
-
-#ifdef __OPENTENBASE__
-    /* get interval partition info */
-    if(relation->intervalparent && relation->partitionvalue->isdefault)
-    {
-        rte->intervalparent = true;
-        rte->isdefault = true;
-        rte->partvalue = NULL;
-    }
-    else if(relation->intervalparent && !relation->partitionvalue->isdefault)
-    {
-        AttrNumber partkey = InvalidAttrNumber;
-        Const        *partvalue = NULL;
-        int         partidx;
-        char        *partname = NULL;
-        Node        *partvalue_node = NULL;
-    
-        partvalue_node = transformExpr(pstate, relation->partitionvalue->router_src, EXPR_KIND_INSERT_TARGET);
-
-        if (!partvalue_node || !IsA(partvalue_node,Const))
-        {
-            partvalue_node = eval_const_expressions(NULL, (Node *)partvalue_node);
-            if(!partvalue_node || !IsA(partvalue_node,Const))
-                elog(ERROR,"the value for locating a partition MUST be constants.");
-        }
-
-        rte->intervalparent = true;
-        rte->isdefault = false;
-        rte->partvalue = partvalue_node;
-
-        partvalue = (Const *)partvalue_node;
-        
-        rel = parserOpenTable(pstate, relation, AccessShareLock);
-
-        partkey = RelationGetPartitionColumnIndex(rel);
-
-        if(partkey == InvalidAttrNumber)
-        {
-            elog(ERROR, "relation %s is not a partitioned table.", relation->relname);
-        }
-
-        if(RelationGetDescr(rel)->attrs[partkey - 1]->atttypid != partvalue->consttype)
-        {
-            elog(ERROR,"data type of value for locating a partition does not match partition key of relation.");
-        }
-
-        partidx = RelationGetPartitionIdxByValue(rel,partvalue->constvalue);
-
-        if(partidx < 0)
-        {
-            elog(ERROR, "the value for locating a partition is out of range.");
-        }
-
-        partname = GetPartitionName(RelationGetRelid(rel), partidx, false);
-
-        relation->relname = partname;
-        relation->intervalparent = false;
-        relation->partitionvalue = NULL;
-
-        heap_close(rel,AccessShareLock);
-        rel = NULL;
-    }
-#endif
-
     PG_TRY();
     {
+#ifdef __OPENTENBASE__
+        /* get interval partition info */
+        if(relation->intervalparent && relation->partitionvalue->isdefault)
+        {
+            rte->intervalparent = true;
+            rte->isdefault = true;
+            rte->partvalue = NULL;
+        }
+        else if(relation->intervalparent && !relation->partitionvalue->isdefault)
+        {
+            AttrNumber partkey = InvalidAttrNumber;
+            Const        *partvalue = NULL;
+            int         partidx;
+            char        *partname = NULL;
+            Node        *partvalue_node = NULL;
+        
+            partvalue_node = transformExpr(pstate, relation->partitionvalue->router_src, EXPR_KIND_INSERT_TARGET);
+
+            if (!partvalue_node || !IsA(partvalue_node,Const))
+            {
+                partvalue_node = eval_const_expressions(NULL, (Node *)partvalue_node);
+                if(!partvalue_node || !IsA(partvalue_node,Const))
+                    elog(ERROR,"the value for locating a partition MUST be constants.");
+            }
+
+            rte->intervalparent = true;
+            rte->isdefault = false;
+            rte->partvalue = partvalue_node;
+
+            partvalue = (Const *)partvalue_node;
+
+            rel = parserOpenTable(pstate, relation, AccessShareLock);
+
+            partkey = RelationGetPartitionColumnIndex(rel);
+
+            if(partkey == InvalidAttrNumber)
+            {
+                elog(ERROR, "relation %s is not a partitioned table.", relation->relname);
+            }
+
+            if(RelationGetDescr(rel)->attrs[partkey - 1]->atttypid != partvalue->consttype)
+            {
+                elog(ERROR,"data type of value for locating a partition does not match partition key of relation.");
+            }
+
+            partidx = RelationGetPartitionIdxByValue(rel,partvalue->constvalue);
+
+            if(partidx < 0)
+            {
+                elog(ERROR, "the value for locating a partition is out of range.");
+            }
+
+            partname = GetPartitionName(RelationGetRelid(rel), partidx, false);
+
+            relation->relname = partname;
+            relation->intervalparent = false;
+            relation->partitionvalue = NULL;
+
+            heap_close(rel,AccessShareLock);
+            rel = NULL;
+        }
+#endif
+
         /*
          * Get the rel's OID.  This access also ensures that we have an up-to-date
          * relcache entry for the rel.  Since this is typically the first access
@@ -1347,8 +1360,8 @@ addRangeTableEntry(ParseState *pstate,
     if (rel == NULL)
     {
         Assert(creating_force_view);
-        rte->relid = RelationGetRelid(rel);
-        rte->relkind = rel->rd_rel->relkind;
+        rte->relid = InvalidOid;
+        rte->relkind = RELKIND_RELATION;
 
         /*
          * Build the list of effective column names using user-supplied aliases
@@ -1382,6 +1395,12 @@ addRangeTableEntry(ParseState *pstate,
     rte->inh = inh;
     rte->inFromCl = inFromCl;
 
+
+    rte->requiredPerms = ACL_SELECT;
+    rte->checkAsUser = InvalidOid;    /* not set-uid by default, either */
+    rte->selectedCols = NULL;
+    rte->insertedCols = NULL;
+    rte->updatedCols = NULL;
 #ifdef XCP
     /*
      * Ugly workaround against permission check error when non-privileged
@@ -1399,14 +1418,7 @@ addRangeTableEntry(ParseState *pstate,
      */
     if (IS_PGXC_DATANODE && rte->relid == StatisticRelationId)
         rte->requiredPerms = 0;
-    else
 #endif
-    rte->requiredPerms = ACL_SELECT;
-    rte->checkAsUser = InvalidOid;    /* not set-uid by default, either */
-    rte->selectedCols = NULL;
-    rte->insertedCols = NULL;
-    rte->updatedCols = NULL;
-
     /*
      * Add completed RTE to pstate's range table list, but not to join list
      * nor namespace --- caller must do that if appropriate.
@@ -2837,7 +2849,7 @@ get_rte_attribute_type(RangeTblEntry *rte, AttrNumber attnum,
 {// #lizard forgives
     if (creating_force_view && rte->rtekind == RTE_RELATION && !OidIsValid(rte->relid))
     {
-        *vartype = UNKNOWNOID;
+        *vartype = TEXTOID;;
         *vartypmod = -1;
         *varcollid = InvalidOid;
         return;
@@ -3521,6 +3533,10 @@ isQueryUsingTempRelation_walker(Node *node, void *context)
 
             if (rte->rtekind == RTE_RELATION)
             {
+                if (creating_force_view && rte->relid == InvalidOid)
+                {
+                    continue;
+                }
                 Relation    rel = heap_open(rte->relid, AccessShareLock);
                 char        relpersistence = rel->rd_rel->relpersistence;
                 heap_close(rel, AccessShareLock);

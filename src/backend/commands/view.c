@@ -19,6 +19,8 @@
 
 #include "access/heapam.h"
 #include "access/xact.h"
+#include "catalog/pg_type.h"
+#include "catalog/pg_collation.h" 
 #include "catalog/namespace.h"
 #include "commands/defrem.h"
 #include "commands/tablecmds.h"
@@ -92,11 +94,25 @@ DefineVirtualRelation(RangeVar *relation, List *tlist, bool replace,
 
         if (!tle->resjunk)
         {
-            ColumnDef  *def = makeColumnDef(tle->resname,
-                                            exprType((Node *) tle->expr),
-                                            exprTypmod((Node *) tle->expr),
-                                            exprCollation((Node *) tle->expr));
+            
+            Oid            coltype = exprType((Node *) tle->expr);
+            int32        coltypmod = exprTypmod((Node *) tle->expr);
+            Oid            colcoll = exprCollation((Node *) tle->expr);
+            ColumnDef  *def;
 
+            if (force && coltype == UNKNOWNOID)
+            {
+                coltype = TEXTOID;
+                coltypmod = -1; 
+                
+                colcoll = DEFAULT_COLLATION_OID;
+            }
+
+
+            def = makeColumnDef(tle->resname,
+                                coltype,    
+                                coltypmod,  
+                                colcoll);  
             /*
              * It's possible that the column is of a collatable type but the
              * collation could not be resolved, so double-check.
@@ -484,6 +500,7 @@ ObjectAddress
 DefineView(ViewStmt *stmt, const char *queryString,
 		   int stmt_location, int stmt_len)
 {
+
 	Query	   *viewParse;
 	RangeVar   *view;
 	ListCell   *cell;
@@ -546,19 +563,16 @@ DefineView(ViewStmt *stmt, const char *queryString,
      * If the check option is specified, look to see if the view is actually
      * auto-updatable or not.
      */
-    if (check_option)
+    if (check_option && !stmt->force)
     {
-        if (!stmt->force)
-        {
-            const char *view_updatable_error =
+        const char *view_updatable_error =
             view_query_is_auto_updatable(viewParse, true);
 
-            if (view_updatable_error)
-                ereport(ERROR,
-                        (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-                         errmsg("WITH CHECK OPTION is supported only on automatically updatable views"),
-                         errhint("%s", view_updatable_error)));
-        }
+        if (view_updatable_error)
+            ereport(ERROR,
+                    (errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+                     errmsg("WITH CHECK OPTION is supported only on automatically updatable views"),
+                     errhint("%s", view_updatable_error)));
     }
 
     /*
@@ -603,23 +617,25 @@ DefineView(ViewStmt *stmt, const char *queryString,
      * schema name.
      */
     view = copyObject(stmt->view);    /* don't corrupt original command */
-    if (view->relpersistence == RELPERSISTENCE_PERMANENT
-        && isQueryUsingTempRelation(viewParse))
+    if (!stmt->force)
     {
-        view = copyObject(view);    /* don't corrupt original command */
+        if (view->relpersistence == RELPERSISTENCE_PERMANENT
+            && isQueryUsingTempRelation(viewParse))
+        {
+            view = copyObject(view);    /* don't corrupt original command */
 #ifdef XCP
-        /*
-         * Change original command as well - we do not want to create that view
-         * on other coordinators where temp table does not exist
-         */
-        stmt->view->relpersistence = RELPERSISTENCE_TEMP;
+            /*
+             * Change original command as well - we do not want to create that view
+             * on other coordinators where temp table does not exist
+             */
+            stmt->view->relpersistence = RELPERSISTENCE_TEMP;
 #endif
-        view->relpersistence = RELPERSISTENCE_TEMP;
-        ereport(NOTICE,
-                (errmsg("view \"%s\" will be a temporary view",
-                        view->relname)));
+            view->relpersistence = RELPERSISTENCE_TEMP;
+            ereport(NOTICE,
+                    (errmsg("view \"%s\" will be a temporary view",
+                            view->relname)));
+        }
     }
-
     /*
      * Create the view relation
      *
@@ -643,7 +659,10 @@ StoreViewQuery(Oid viewOid, Query *viewParse, bool replace, bool force)
      * The range table of 'viewParse' does not contain entries for the "OLD"
      * and "NEW" relations. So... add them!
      */
-    viewParse = UpdateRangeTableOfViewParse(viewOid, viewParse);
+    if (!force)
+    {
+        viewParse = UpdateRangeTableOfViewParse(viewOid, viewParse);
+    }
 
     /*
      * Now create the rules associated with the view.
