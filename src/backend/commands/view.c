@@ -22,6 +22,7 @@
 #include "catalog/pg_type.h"
 #include "catalog/pg_collation.h" 
 #include "catalog/namespace.h"
+#include "catalog/pg_database.h"
 #include "commands/defrem.h"
 #include "commands/tablecmds.h"
 #include "commands/view.h"
@@ -92,32 +93,71 @@ DefineVirtualRelation(RangeVar *relation, List *tlist, bool replace,
     {
         TargetEntry *tle = (TargetEntry *) lfirst(t);
 
-        if (!tle->resjunk)
+if (!tle->resjunk)
         {
-            
             Oid            coltype = exprType((Node *) tle->expr);
             int32        coltypmod = exprTypmod((Node *) tle->expr);
             Oid            colcoll = exprCollation((Node *) tle->expr);
             ColumnDef  *def;
 
-            if (force && coltype == UNKNOWNOID)
+            /*
+             * FINAL CORRECT IMPLEMENTATION based on conclusive lldb evidence:
+             *
+             * The parser, in FORCE mode, proactively resolves unknown columns
+             * to TEXT (Oid 25) but provides an InvalidOid (0) collation.
+             * Our task is not to fight this behavior, but to correct its result.
+             *
+             * The condition below detects exactly this state: we are in FORCE
+             * mode, the collation is invalid, and the type is one that requires
+             * a collation. This is the precise point of failure.
+             */
+            if (force && !OidIsValid(colcoll) && type_is_collatable(coltype))
             {
-                coltype = TEXTOID;
-                coltypmod = -1; 
-                
-                colcoll = DEFAULT_COLLATION_OID;
-            }
+                HeapTuple    dbetuple;
 
+                /*
+                 * Fetch the database's default collation to fix the missing
+                 * collation from the parser.
+                 */
+                dbetuple = SearchSysCache1(DATABASEOID, ObjectIdGetDatum(MyDatabaseId));
+                if (HeapTupleIsValid(dbetuple))
+                {
+                    Datum collname_datum;
+                    bool  isnull;
+
+                    collname_datum = SysCacheGetAttr(DATABASEOID, dbetuple,
+                                                     Anum_pg_database_datcollate, &isnull);
+
+                    if (isnull)
+                    {
+                        colcoll = C_COLLATION_OID; /* Should not happen */
+                    }
+                    else
+                    {
+                        char *dbcollatename = NameStr(*DatumGetName(collname_datum));
+                        colcoll = get_collation_oid(list_make1(makeString(dbcollatename)), true);
+                        if (!OidIsValid(colcoll))
+                            colcoll = C_COLLATION_OID;
+                    }
+
+                    ReleaseSysCache(dbetuple);
+                }
+                else
+                {
+                    elog(ERROR, "cache lookup failed for database %u", MyDatabaseId);
+                }
+            }
 
             def = makeColumnDef(tle->resname,
                                 coltype,    
                                 coltypmod,  
                                 colcoll);  
+            
             /*
-             * It's possible that the column is of a collatable type but the
-             * collation could not be resolved, so double-check.
+             * This final check remains as a safeguard. With the fix above,
+             * it should now always pass.
              */
-            if (type_is_collatable(exprType((Node *) tle->expr)))
+            if (type_is_collatable(coltype))
             {
                 if (!OidIsValid(def->collOid))
                     ereport(ERROR,

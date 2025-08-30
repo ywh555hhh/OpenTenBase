@@ -733,7 +733,6 @@ scanRTEForColumn(ParseState *pstate, RangeTblEntry *rte, char *colname,
         markVarForSelectPriv(pstate, var, rte);
         return (Node *) var;
     }
-
     /*
      * If we have a unique match, return it.  Note that this allows a user
      * alias to override a system column name (such as OID) without error.
