@@ -45,7 +45,7 @@
 #endif
 
 
-static void checkViewTupleDesc(TupleDesc newdesc, TupleDesc olddesc);
+static void checkViewTupleDesc(TupleDesc newdesc, TupleDesc olddesc, bool force);
 
 /*---------------------------------------------------------------------
  * Validator for "check_option" reloption on views. The allowed values
@@ -221,7 +221,7 @@ if (!tle->resjunk)
          * column list.
          */
         descriptor = BuildDescForRelation(attrList);
-        checkViewTupleDesc(descriptor, rel->rd_att);
+        checkViewTupleDesc(descriptor, rel->rd_att, force);
 
         /*
          * If new attributes have been added, we must add pg_attribute entries
@@ -337,7 +337,7 @@ if (!tle->resjunk)
  * Also, we allow the new tupledesc to have more columns than the old.
  */
 static void
-checkViewTupleDesc(TupleDesc newdesc, TupleDesc olddesc)
+checkViewTupleDesc(TupleDesc newdesc, TupleDesc olddesc, bool force)
 {
     int            i;
 
@@ -357,13 +357,17 @@ checkViewTupleDesc(TupleDesc newdesc, TupleDesc olddesc)
             ereport(ERROR,
                     (errcode(ERRCODE_INVALID_TABLE_DEFINITION),
                      errmsg("cannot drop columns from view")));
-
+        if (force)
+            continue;          
+                  
         if (strcmp(NameStr(newattr->attname), NameStr(oldattr->attname)) != 0)
             ereport(ERROR,
                     (errcode(ERRCODE_INVALID_TABLE_DEFINITION),
                      errmsg("cannot change name of view column \"%s\" to \"%s\"",
                             NameStr(oldattr->attname),
                             NameStr(newattr->attname))));
+
+
         /* XXX would it be safe to allow atttypmod to change?  Not sure */
         if (newattr->atttypid != oldattr->atttypid ||
             newattr->atttypmod != oldattr->atttypmod)
